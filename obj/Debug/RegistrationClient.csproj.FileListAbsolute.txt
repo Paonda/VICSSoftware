@@ -1,0 +1,13 @@
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\bin\Debug\RegistrationClient.exe.config
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\bin\Debug\RegistrationClient.exe
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\bin\Debug\RegistrationClient.pdb
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\bin\Debug\MetroSet UI.dll
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\obj\Debug\RegistrationClient.csproj.AssemblyReference.cache
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\obj\Debug\RegistrationClient.csproj.SuggestedBindingRedirects.cache
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\obj\Debug\RegistrationClient.Properties.Resources.resources
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\obj\Debug\RegistrationClient.csproj.GenerateResource.cache
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\obj\Debug\RegistrationClient.csproj.CoreCompileInputs.cache
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\obj\Debug\RegistrationClient.csproj.CopyComplete
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\obj\Debug\RegistrationClient.exe
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\obj\Debug\RegistrationClient.pdb
+D:\Captain Paonda\DEVELOPER Folder\RegistrationClient\obj\Debug\RegistrationClient.RegistrationClient.resources
