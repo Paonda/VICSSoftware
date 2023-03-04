@@ -360,7 +360,7 @@ namespace RegistrationClient
         }
         private void btn_about_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("VICS (Voter Information Collection System) Software is developed by Oca Industries and Paonda Technologies. Version " + Assembly.GetExecutingAssembly().GetName().Version.ToString(), "About");
+            MessageBox.Show("VICS (Voter Information Collection System) Software is developed by Oca Industries and Paonda Technologies. Version " + Assembly.GetExecutingAssembly().GetName().Version.ToString(), "About VICS Software");
         }
         private void tbc_main_SelectedIndexChanged(object sender, EventArgs e)
         {
