@@ -15,507 +15,492 @@ namespace RegistrationClient
 {
     public partial class RegistrationClient : MetroSetForm
     {
-        bool txt_first_hasValue = false;
-        bool txt_middle_hasValue = false;
-        bool txt_last_hasValue = false;
-        bool cmb_birthmonth_hasValue = false;
-        bool cmb_birthyear_hasValue = false;
-        bool cmb_birthday_hasValue = false;
-        bool rdb_male_hasValue = false;
-        bool rdb_female_hasValue = false;
-        bool cmb_region_hasValue = false;
-        bool cmb_city_hasValue = false;
-        bool txt_voterid_hasValue = false;
-        bool txt_number_hasValue = false;
-        bool rdb_pres_hasValue = false;
-        bool rdb_vice_hasValue = false;
-        bool tbc_main_isSubmit = false;
-        // Initialize enableCondition for btn_reset and btn_submit
-        bool btn_reset_enableCondition = false;
-        bool btn_submit_enableCondition = false;
+        bool Text_Name_First_HasValue = false;
+        bool Text_Name_Middle_HasValue = false;
+        bool Text_Name_Last_HasValue = false;
+        bool Combo_Birth_Month_HasValue = false;
+        bool Combo_Birth_Year_HasValue = false;
+        bool Combo_Birth_Day_HasValue = false;
+        bool Radio_Male_HasValue = false;
+        bool Radio_Female_HasValue = false;
+        bool Combo_Voter_Region_HasValue = false;
+        bool Combo_Voter_City_HasValue = false;
+        bool Text_Voter_ID_HasValue = false;
+        bool Text_Voter_Contact_HasValue = false;
+        bool Radio_Pres_HasValue = false;
+        bool Radio_Vice_HasValue = false;
+        bool TabControl_Main_IsSubmit = false;
+        bool Button_Reset_EnableCondition = false;
+        bool Button_Submit_EnableCondition = false;
         public RegistrationClient()
         {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            txt_version.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            cmb_birthyear.Items.Clear();
-            cmb_birthyear.Items.AddRange(Enumerable.Range(DateTime.Now.Year-119, 102).Cast<object>().Reverse().ToArray());
-            cmb_birthmonth.Items.Clear();
-            cmb_birthmonth.Items.AddRange(CultureInfo.InvariantCulture.DateTimeFormat.MonthNames);
-            cmb_birthmonth.Items.RemoveAt(cmb_birthmonth.Items.Count-1);
-            cmb_birthday.Items.Clear();
-            cmb_birthday.Enabled = false;
-            cmb_city.Enabled = false;
-            btn_reset.Enabled = false;
-            btn_submit.Enabled = false;
+            Text_Version.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            Combo_Birth_Year.Items.Clear();
+            Combo_Birth_Year.Items.AddRange(Enumerable.Range(DateTime.Now.Year-119, 102).Cast<object>().Reverse().ToArray());
+            Combo_Birth_Month.Items.Clear();
+            Combo_Birth_Month.Items.AddRange(CultureInfo.InvariantCulture.DateTimeFormat.MonthNames);
+            Combo_Birth_Month.Items.RemoveAt(Combo_Birth_Month.Items.Count-1);
+            Combo_Birth_Day.Items.Clear();
+            Combo_Birth_Day.Enabled = false;
+            Combo_Voter_City.Enabled = false;
+            Button_Reset.Enabled = false;
+            Button_Submit.Enabled = false;
         }
-        private void check_hasValue()
+        private void Check_HasValue()
         {
-            rdb_pres_hasValue = (rdb_pres1.Checked || rdb_pres2.Checked || rdb_pres3.Checked || rdb_pres4.Checked || rdb_pres5.Checked || rdb_pres6.Checked || rdb_pres7.Checked || rdb_pres8.Checked || rdb_pres9.Checked || rdb_pres10.Checked);
-            rdb_vice_hasValue = (rdb_vice1.Checked || rdb_vice2.Checked || rdb_vice3.Checked || rdb_vice4.Checked || rdb_vice5.Checked || rdb_vice6.Checked || rdb_vice7.Checked || rdb_vice8.Checked || rdb_vice9.Checked);
-            btn_reset_enableCondition = (rdb_pres_hasValue || rdb_vice_hasValue || txt_first_hasValue || txt_middle_hasValue || txt_last_hasValue || rdb_male_hasValue || rdb_female_hasValue || cmb_birthmonth_hasValue || cmb_birthyear_hasValue || cmb_birthday_hasValue || cmb_region_hasValue || cmb_city_hasValue || txt_voterid_hasValue || txt_number_hasValue);
-            btn_submit_enableCondition = (tbc_main_isSubmit && rdb_pres_hasValue && rdb_vice_hasValue && txt_first_hasValue && txt_middle_hasValue && txt_last_hasValue && (rdb_male_hasValue || rdb_female_hasValue) && cmb_birthmonth_hasValue && cmb_birthyear_hasValue && cmb_birthday_hasValue && cmb_region_hasValue && cmb_city_hasValue && txt_voterid_hasValue && txt_number_hasValue);
+            Radio_Pres_HasValue = (Radio_Pres_1.Checked || Radio_Pres_2.Checked || Radio_Pres_3.Checked || Radio_Pres_4.Checked || Radio_Pres_5.Checked || Radio_Pres_6.Checked || Radio_Pres_7.Checked || Radio_Pres_8.Checked || Radio_Pres_9.Checked || Radio_Pres_10.Checked);
+            Radio_Vice_HasValue = (Radio_Vice_1.Checked || Radio_Vice_2.Checked || Radio_Vice_3.Checked || Radio_Vice_4.Checked || Radio_Vice_5.Checked || Radio_Vice_6.Checked || Radio_Vice_7.Checked || Radio_Vice_8.Checked || Radio_Vice_9.Checked);
+            Button_Reset_EnableCondition = (Radio_Pres_HasValue || Radio_Vice_HasValue || Text_Name_First_HasValue || Text_Name_Middle_HasValue || Text_Name_Last_HasValue || Radio_Male_HasValue || Radio_Female_HasValue || Combo_Birth_Month_HasValue || Combo_Birth_Year_HasValue || Combo_Birth_Day_HasValue || Combo_Voter_Region_HasValue || Combo_Voter_City_HasValue || Text_Voter_ID_HasValue || Text_Voter_Contact_HasValue);
+            Button_Submit_EnableCondition = (TabControl_Main_IsSubmit && Radio_Pres_HasValue && Radio_Vice_HasValue && Text_Name_First_HasValue && Text_Name_Middle_HasValue && Text_Name_Last_HasValue && (Radio_Male_HasValue || Radio_Female_HasValue) && Combo_Birth_Month_HasValue && Combo_Birth_Year_HasValue && Combo_Birth_Day_HasValue && Combo_Voter_Region_HasValue && Combo_Voter_City_HasValue && Text_Voter_ID_HasValue && Text_Voter_Contact_HasValue);
         }
-        private void btn_updateState()
+        private void Button_UpdateState()
         {
-            check_hasValue();
-            btn_reset.Enabled = btn_reset_enableCondition;
-            btn_submit.Enabled = btn_submit_enableCondition;
+            Check_HasValue();
+            Button_Reset.Enabled = Button_Reset_EnableCondition;
+            Button_Submit.Enabled = Button_Submit_EnableCondition;
         }
-        private void btn_reset_Click(object sender, EventArgs e)
+        private void Button_Reset_Click(object sender, EventArgs e)
         {
-            txt_first.ResetText();
-            txt_first_hasValue = false;
-            txt_last.ResetText();
-            txt_last_hasValue = false;
-            txt_middle.ResetText();
-            txt_middle_hasValue = false;
-            cmb_birthmonth.SelectedIndex = -1;
-            cmb_birthmonth.Refresh();
-            cmb_birthmonth_hasValue = false;
-            cmb_birthday.SelectedIndex = -1;
-            cmb_birthday.Refresh();
-            cmb_birthday_hasValue = false;
-            cmb_birthday.Enabled = false;
-            cmb_birthyear.SelectedIndex = -1;
-            cmb_birthyear.Refresh();
-            cmb_birthyear_hasValue = false;
-            rdb_male.Checked = false;
-            rdb_male_hasValue = false;
-            rdb_female.Checked = false;
-            rdb_female_hasValue = false;
-            cmb_region.SelectedIndex = -1;
-            cmb_region.Refresh();
-            cmb_region_hasValue = false;
-            cmb_city.SelectedIndex = -1;
-            cmb_city.Items.Clear();
-            cmb_city.Refresh();
-            cmb_city_hasValue = false;
-            txt_voterid.ResetText();
-            txt_voterid_hasValue = false;
-            txt_number.ResetText();
-            txt_number_hasValue = false;
-            rdb_pres1.Checked = false;
-            rdb_pres2.Checked = false;
-            rdb_pres3.Checked = false;
-            rdb_pres4.Checked = false;
-            rdb_pres5.Checked = false;
-            rdb_pres6.Checked = false;
-            rdb_pres7.Checked = false;
-            rdb_pres8.Checked = false;
-            rdb_pres9.Checked = false;
-            rdb_pres10.Checked = false;
-            rdb_vice1.Checked = false;
-            rdb_vice2.Checked = false;
-            rdb_vice3.Checked = false;
-            rdb_vice4.Checked = false;
-            rdb_vice5.Checked = false;
-            rdb_vice6.Checked = false;
-            rdb_vice7.Checked = false;
-            rdb_vice8.Checked = false;
-            rdb_vice9.Checked = false;
-            lbl_checkname.Text = "Name:";
-            lbl_checkpres.Text = "For President: ";
-            lbl_checkvice.Text = "For Vice President: ";
-            lbl_checkbirthdate.Text = "Birth Date: ";
-            lbl_checkgender.Text = "Gender: ";
-            btn_updateState();
+            Text_Name_First.ResetText();
+            Text_Name_First_HasValue = false;
+            Text_Name_Last.ResetText();
+            Text_Name_Last_HasValue = false;
+            Text_Name_Middle.ResetText();
+            Text_Name_Middle_HasValue = false;
+            Combo_Birth_Month.SelectedIndex = -1;
+            Combo_Birth_Month.Refresh();
+            Combo_Birth_Month_HasValue = false;
+            Combo_Birth_Day.SelectedIndex = -1;
+            Combo_Birth_Day.Refresh();
+            Combo_Birth_Day_HasValue = false;
+            Combo_Birth_Day.Enabled = false;
+            Combo_Birth_Year.SelectedIndex = -1;
+            Combo_Birth_Year.Refresh();
+            Combo_Birth_Year_HasValue = false;
+            Radio_Male.Checked = false;
+            Radio_Male_HasValue = false;
+            Radio_Female.Checked = false;
+            Radio_Female_HasValue = false;
+            Combo_Voter_Region.SelectedIndex = -1;
+            Combo_Voter_Region.Refresh();
+            Combo_Voter_Region_HasValue = false;
+            Combo_Voter_City.SelectedIndex = -1;
+            Combo_Voter_City.Items.Clear();
+            Combo_Voter_City.Refresh();
+            Combo_Voter_City_HasValue = false;
+            Text_Voter_ID.ResetText();
+            Text_Voter_ID_HasValue = false;
+            Text_Voter_Contact.ResetText();
+            Text_Voter_Contact_HasValue = false;
+            Radio_Pres_1.Checked = false;
+            Radio_Pres_2.Checked = false;
+            Radio_Pres_3.Checked = false;
+            Radio_Pres_4.Checked = false;
+            Radio_Pres_5.Checked = false;
+            Radio_Pres_6.Checked = false;
+            Radio_Pres_7.Checked = false;
+            Radio_Pres_8.Checked = false;
+            Radio_Pres_9.Checked = false;
+            Radio_Pres_10.Checked = false;
+            Radio_Vice_1.Checked = false;
+            Radio_Vice_2.Checked = false;
+            Radio_Vice_3.Checked = false;
+            Radio_Vice_4.Checked = false;
+            Radio_Vice_5.Checked = false;
+            Radio_Vice_6.Checked = false;
+            Radio_Vice_7.Checked = false;
+            Radio_Vice_8.Checked = false;
+            Radio_Vice_9.Checked = false;
+            Label_Check_Name.Text = "Name:";
+            Label_Check_Pres.Text = "For President: ";
+            Label_Check_Vice.Text = "For Vice President: ";
+            Label_Check_BirthDate.Text = "Birth Date: ";
+            Label_Check_Gender.Text = "Gender: ";
+            Button_UpdateState();
         }
-        private void txt_first_TextChanged(object sender, EventArgs e)
+        private void Text_Name_First_TextChanged(object sender, EventArgs e)
         {
-            if (txt_first.Text.Length > 0)
+            if (Text_Name_First.Text.Length > 0)
             {
-                txt_first_hasValue = true;
+                Text_Name_First_HasValue = true;
             }
             else
             {
-                txt_first_hasValue = false;
+                Text_Name_First_HasValue = false;
             }
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void cmb_birthmonth_SelectedIndexChanged(object sender, EventArgs e)
+        private void Text_Name_Last_TextChanged(object sender, EventArgs e)
         {
-            cmb_birthmonth_hasValue = true;
-            if (cmb_birthmonth_hasValue && cmb_birthyear_hasValue == true)
+            if (Text_Name_Last.Text.Length > 0)
             {
-                cmb_birthday.Enabled = true;
-            }
-            else 
-            { 
-
-            }
-            btn_updateState();
-        }
-        private void cmb_birthyear_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmb_birthyear_hasValue = true;
-            if (cmb_birthmonth_hasValue && cmb_birthyear_hasValue == true)
-            {
-                cmb_birthday.Enabled = true;
+                Text_Name_Last_HasValue = true;
             }
             else
             {
-
+                Text_Name_Last_HasValue = false;
             }
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void cmb_birthday_DropDown(object sender, EventArgs e)
+        private void Text_Name_Middle_TextChanged(object sender, EventArgs e)
         {
-            int daysInMonth = DateTime.DaysInMonth(int.Parse(cmb_birthyear.Text), cmb_birthmonth.SelectedIndex);
-            cmb_birthday.Items.AddRange(Enumerable.Range(1, daysInMonth).Cast<object>().Reverse().ToArray());
-        }
-        private void cmb_birthday_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmb_birthday_hasValue = true;
-            btn_updateState();
-        }
-        private void txt_last_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_last.Text.Length > 0)
+            if (Text_Name_Middle.Text.Length > 0)
             {
-                txt_last_hasValue = true;
+                Text_Name_Middle_HasValue = true;
             }
             else
             {
-                txt_last_hasValue = false;
+                Text_Name_Middle_HasValue = false;
             }
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void txt_middle_TextChanged(object sender, EventArgs e)
+        private void Combo_Birth_Month_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txt_middle.Text.Length > 0)
+            Combo_Birth_Month_HasValue = true;
+            Combo_Birth_Day.Enabled = (Combo_Birth_Month_HasValue && Combo_Birth_Year_HasValue);
+            Button_UpdateState();
+        }
+        private void Combo_Birth_Year_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Combo_Birth_Year_HasValue = true;
+            Combo_Birth_Day.Enabled = (Combo_Birth_Month_HasValue && Combo_Birth_Year_HasValue);
+            Button_UpdateState();
+        }
+        private void Combo_Birth_Day_DropDown(object sender, EventArgs e)
+        {
+            int daysInMonth = DateTime.DaysInMonth(int.Parse(Combo_Birth_Year.Text), Combo_Birth_Month.SelectedIndex);
+            Combo_Birth_Day.Items.AddRange(Enumerable.Range(1, daysInMonth).Cast<object>().Reverse().ToArray());
+        }
+        private void Combo_Birth_Day_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Combo_Birth_Day_HasValue = true;
+            Button_UpdateState();
+        }
+        private void Radio_Male_CheckedChanged(object sender)
+        {
+            if(Radio_Male.Checked == true)
             {
-                txt_middle_hasValue = true;
+                Radio_Male_HasValue = true;
             }
             else
             {
-                txt_middle_hasValue = false;
+                Radio_Male_HasValue = false;
             }
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_male_CheckedChanged(object sender)
+        private void Radio_Female_CheckedChanged(object sender)
         {
-            if(rdb_male.Checked == true)
+            if (Radio_Female.Checked == true)
             {
-                rdb_male_hasValue = true;
+                Radio_Female_HasValue = true;
             }
             else
             {
-                rdb_male_hasValue = false;
+                Radio_Female_HasValue = false;
             }
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_female_CheckedChanged(object sender)
+        private void Combo_Voter_Region_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (rdb_female.Checked == true)
+            Combo_Voter_Region_HasValue = true;
+            Button_UpdateState();
+            Combo_Voter_City.Enabled = true;
+            Combo_Voter_City.Items.Clear();
+            if (Combo_Voter_Region.SelectedIndex == 0)
             {
-                rdb_female_hasValue = true;
+                Combo_Voter_City.Items.AddRange(new string[] { "Manila City", "Mandaluyong City", "Marikina City", "Pasig City", "Quezon City", "San Juan City", "Caloocan City", "Malabon City", "Navotas City", "Valenzuela City", "Las Pinas City", "Makati City", "Muntinlupa City", "Paranaque City", "Pasay City", "Pateros", "Taguig City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 1)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Ilocos Norte", "Ilocos Sur", "La Union", "Pangasinan" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 2)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Abra", "Apayao", "Benguet", "Ifugao", "Kalinga", "Mountain Province", "Baguio City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 3)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Batanes", "Cagayan", "Isabela Province", "Nueva Vizcaya", "Quirino" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 4)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Aurora", "Bataan", "Bulacan", "Nueva Ecija", "Pampanga", "Tarlac", "Zambales", "Angeles City", "Olongapo City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 5)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Batangas", "Cavite", "Laguna", "Quezon Province", "Rizal", "Lucena City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 6)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Marinduque", "Occidental Mindoro", "Oriental Mindoro", "Palawan", "Romblon", "Puerto Princesa City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 7)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Albay", "Camarines Norte", "Camarines Sur", "Catanduanes", "Masbate", "Sorsogon" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 8)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Aklan", "Antique", "Capiz", "Guimaras", "Iloilo City", "Iloilo Province", "Negros Occidental", "Bacolod City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 9)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Bohol", "Cebu", "Negros Oriental", "Siquijor", "Cebu City", "Lapu-Lapu City", "Mandaue City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 10)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Biliran", "Eastern Samar", "Leyte", "Northern Samar", "Samar", "Southern Leyte", "Tacloban City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 11)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Zamboanga del Norte", "Zamboanga del Sur", "Zamboanga Sibugay", "Isabela City", "Zamboanga City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 12)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Bukidnon", "Camiguin", "Lanao del Norte", "Misamis Occidental", "Misamis Oriental", "Cagayan de Oro City", "Iligan City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 13)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Compostela Valley", "Davao del Norte", "Davao del Sur", "Davao Occidental", "Davao Oriental", "Davao City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 14)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "North Cotabato", "Sarangani", "South Cotabato", "Sultan Kudarat", "Cotabato City", "General Santos City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 15)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Agusan del Norte", "Agusan del Sur", "Dinagat Islands", "Surigao del Norte", "Surigao del Sur", "Butuan City" });
+            }
+            else if (Combo_Voter_Region.SelectedIndex == 16)
+            {
+                Combo_Voter_City.Items.AddRange(new string[] { "Basilan", "Lanao del Sur", "Maguindanao", "Sulu", "Tawi-Tawi" });
             }
             else
             {
-                rdb_female_hasValue = false;
+                Combo_Voter_City.Enabled = false;
             }
-            btn_updateState();
         }
-        private void cmb_region_SelectedIndexChanged(object sender, EventArgs e)
+        private void Combo_Voter_City_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmb_region_hasValue = true;
-            btn_updateState();
-            cmb_city.Enabled = true;
-            cmb_city.Items.Clear();
-            if (cmb_region.SelectedIndex == 0)
+            Combo_Voter_City_HasValue = true;
+            Button_UpdateState();
+        }
+        private void Text_Voter_ID_TextChanged(object sender, EventArgs e)
+        {
+            if (Text_Voter_ID.Text.Length > 0)
             {
-                cmb_city.Items.AddRange(new string[] { "Manila City", "Mandaluyong City", "Marikina City", "Pasig City", "Quezon City", "San Juan City", "Caloocan City", "Malabon City", "Navotas City", "Valenzuela City", "Las Pinas City", "Makati City", "Muntinlupa City", "Paranaque City", "Pasay City", "Pateros", "Taguig City" });
-            }
-            else if (cmb_region.SelectedIndex == 1)
-            {
-                cmb_city.Items.AddRange(new string[] { "Ilocos Norte", "Ilocos Sur", "La Union", "Pangasinan" });
-            }
-            else if (cmb_region.SelectedIndex == 2)
-            {
-                cmb_city.Items.AddRange(new string[] { "Abra", "Apayao", "Benguet", "Ifugao", "Kalinga", "Mountain Province", "Baguio City" });
-            }
-            else if (cmb_region.SelectedIndex == 3)
-            {
-                cmb_city.Items.AddRange(new string[] { "Batanes", "Cagayan", "Isabela Province", "Nueva Vizcaya", "Quirino" });
-            }
-            else if (cmb_region.SelectedIndex == 4)
-            {
-                cmb_city.Items.AddRange(new string[] { "Aurora", "Bataan", "Bulacan", "Nueva Ecija", "Pampanga", "Tarlac", "Zambales", "Angeles City", "Olongapo City" });
-            }
-            else if (cmb_region.SelectedIndex == 5)
-            {
-                cmb_city.Items.AddRange(new string[] { "Batangas", "Cavite", "Laguna", "Quezon Province", "Rizal", "Lucena City" });
-            }
-            else if (cmb_region.SelectedIndex == 6)
-            {
-                cmb_city.Items.AddRange(new string[] { "Marinduque", "Occidental Mindoro", "Oriental Mindoro", "Palawan", "Romblon", "Puerto Princesa City" });
-            }
-            else if (cmb_region.SelectedIndex == 7)
-            {
-                cmb_city.Items.AddRange(new string[] { "Albay", "Camarines Norte", "Camarines Sur", "Catanduanes", "Masbate", "Sorsogon" });
-            }
-            else if (cmb_region.SelectedIndex == 8)
-            {
-                cmb_city.Items.AddRange(new string[] { "Aklan", "Antique", "Capiz", "Guimaras", "Iloilo City", "Iloilo Province", "Negros Occidental", "Bacolod City" });
-            }
-            else if (cmb_region.SelectedIndex == 9)
-            {
-                cmb_city.Items.AddRange(new string[] { "Bohol", "Cebu", "Negros Oriental", "Siquijor", "Cebu City", "Lapu-Lapu City", "Mandaue City" });
-            }
-            else if (cmb_region.SelectedIndex == 10)
-            {
-                cmb_city.Items.AddRange(new string[] { "Biliran", "Eastern Samar", "Leyte", "Northern Samar", "Samar", "Southern Leyte", "Tacloban City" });
-            }
-            else if (cmb_region.SelectedIndex == 11)
-            {
-                cmb_city.Items.AddRange(new string[] { "Zamboanga del Norte", "Zamboanga del Sur", "Zamboanga Sibugay", "Isabela City", "Zamboanga City" });
-            }
-            else if (cmb_region.SelectedIndex == 12)
-            {
-                cmb_city.Items.AddRange(new string[] { "Bukidnon", "Camiguin", "Lanao del Norte", "Misamis Occidental", "Misamis Oriental", "Cagayan de Oro City", "Iligan City" });
-            }
-            else if (cmb_region.SelectedIndex == 13)
-            {
-                cmb_city.Items.AddRange(new string[] { "Compostela Valley", "Davao del Norte", "Davao del Sur", "Davao Occidental", "Davao Oriental", "Davao City" });
-            }
-            else if (cmb_region.SelectedIndex == 14)
-            {
-                cmb_city.Items.AddRange(new string[] { "North Cotabato", "Sarangani", "South Cotabato", "Sultan Kudarat", "Cotabato City", "General Santos City" });
-            }
-            else if (cmb_region.SelectedIndex == 15)
-            {
-                cmb_city.Items.AddRange(new string[] { "Agusan del Norte", "Agusan del Sur", "Dinagat Islands", "Surigao del Norte", "Surigao del Sur", "Butuan City" });
-            }
-            else if (cmb_region.SelectedIndex == 16)
-            {
-                cmb_city.Items.AddRange(new string[] { "Basilan", "Lanao del Sur", "Maguindanao", "Sulu", "Tawi-Tawi" });
+                Text_Voter_ID_HasValue = true;
             }
             else
             {
-                cmb_city.Enabled = false;
+                Text_Voter_ID_HasValue = false;
             }
+            Button_UpdateState();
         }
-        private void cmb_city_SelectedIndexChanged(object sender, EventArgs e)
+        private void Text_Voter_Contact_TextChanged(object sender, EventArgs e)
         {
-            cmb_city_hasValue = true;
-            btn_updateState();
-        }
-        private void txt_voterid_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_voterid.Text.Length > 0)
+            if (Text_Voter_Contact.Text.Length > 0)
             {
-                txt_voterid_hasValue = true;
+                Text_Voter_Contact_HasValue = true;
             }
             else
             {
-                txt_voterid_hasValue = false;
+                Text_Voter_Contact_HasValue = false;
             }
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void txt_number_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_number.Text.Length > 0)
-            {
-                txt_number_hasValue = true;
-            }
-            else
-            {
-                txt_number_hasValue = false;
-            }
-            btn_updateState();
-        }
-        private void btn_about_Click(object sender, EventArgs e)
+        private void Button_About_Click(object sender, EventArgs e)
         {
             MessageBox.Show("VICS (Voter Information Collection System) Software is developed by Oca Industries and Paonda Technologies. Version " + Assembly.GetExecutingAssembly().GetName().Version.ToString(), "About VICS Software");
         }
-        private void tbc_main_SelectedIndexChanged(object sender, EventArgs e)
+        private void TabControl_Main_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbl_checkname.Text = "Name: " + txt_first.Text + " " + txt_middle.Text + " " + txt_last.Text;
-            if(rdb_pres1.Checked == true)
+            Label_Check_Name.Text = "Name: " + Text_Name_First.Text + " " + Text_Name_Middle.Text + " " + Text_Name_Last.Text;
+            if(Radio_Pres_1.Checked == true)
             {
-                lbl_checkpres.Text = "For President: " + rdb_pres1.Text;
+                Label_Check_Pres.Text = "For President: " + Radio_Pres_1.Text;
             }
-            else if (rdb_pres2.Checked == true)
+            else if (Radio_Pres_2.Checked == true)
             {
-                lbl_checkpres.Text = "For President: " + rdb_pres2.Text;
+                Label_Check_Pres.Text = "For President: " + Radio_Pres_2.Text;
             }
-            else if (rdb_pres3.Checked == true)
+            else if (Radio_Pres_3.Checked == true)
             {
-                lbl_checkpres.Text = "For President: " + rdb_pres3.Text;
+                Label_Check_Pres.Text = "For President: " + Radio_Pres_3.Text;
             }
-            else if (rdb_pres4.Checked == true)
+            else if (Radio_Pres_4.Checked == true)
             {
-                lbl_checkpres.Text = "For President: " + rdb_pres4.Text;
+                Label_Check_Pres.Text = "For President: " + Radio_Pres_4.Text;
             }
-            else if (rdb_pres5.Checked == true)
+            else if (Radio_Pres_5.Checked == true)
             {
-                lbl_checkpres.Text = "For President: " + rdb_pres5.Text;
+                Label_Check_Pres.Text = "For President: " + Radio_Pres_5.Text;
             }
-            else if (rdb_pres6.Checked == true)
+            else if (Radio_Pres_6.Checked == true)
             {
-                lbl_checkpres.Text = "For President: " + rdb_pres6.Text;
+                Label_Check_Pres.Text = "For President: " + Radio_Pres_6.Text;
             }
-            else if (rdb_pres7.Checked == true)
+            else if (Radio_Pres_7.Checked == true)
             {
-                lbl_checkpres.Text = "For President: " + rdb_pres7.Text;
+                Label_Check_Pres.Text = "For President: " + Radio_Pres_7.Text;
             }
-            else if (rdb_pres8.Checked == true)
+            else if (Radio_Pres_8.Checked == true)
             {
-                lbl_checkpres.Text = "For President: " + rdb_pres8.Text;
+                Label_Check_Pres.Text = "For President: " + Radio_Pres_8.Text;
             }
-            else if (rdb_pres9.Checked == true)
+            else if (Radio_Pres_9.Checked == true)
             {
-                lbl_checkpres.Text = "For President: " + rdb_pres9.Text;
+                Label_Check_Pres.Text = "For President: " + Radio_Pres_9.Text;
             }
-            else if (rdb_pres10.Checked == true)
+            else if (Radio_Pres_10.Checked == true)
             {
-                lbl_checkpres.Text = "For President: " + rdb_pres10.Text;
+                Label_Check_Pres.Text = "For President: " + Radio_Pres_10.Text;
             }
             else
             {
-                lbl_checkpres.Text = "For President: ";
+                Label_Check_Pres.Text = "For President: ";
             }
-            if (rdb_vice1.Checked == true)
+            if (Radio_Vice_1.Checked == true)
             {
-                lbl_checkvice.Text = "For Vice President: " + rdb_vice1.Text;
+                Label_Check_Vice.Text = "For Vice President: " + Radio_Vice_1.Text;
             }
-            else if (rdb_vice2.Checked == true)
+            else if (Radio_Vice_2.Checked == true)
             {
-                lbl_checkvice.Text = "For Vice President: " + rdb_vice2.Text;
+                Label_Check_Vice.Text = "For Vice President: " + Radio_Vice_2.Text;
             }
-            else if (rdb_vice3.Checked == true)
+            else if (Radio_Vice_3.Checked == true)
             {
-                lbl_checkvice.Text = "For Vice President: " + rdb_vice3.Text;
+                Label_Check_Vice.Text = "For Vice President: " + Radio_Vice_3.Text;
             }
-            else if (rdb_vice4.Checked == true)
+            else if (Radio_Vice_4.Checked == true)
             {
-                lbl_checkvice.Text = "For Vice President: " + rdb_vice4.Text;
+                Label_Check_Vice.Text = "For Vice President: " + Radio_Vice_4.Text;
             }
-            else if (rdb_vice5.Checked == true)
+            else if (Radio_Vice_5.Checked == true)
             {
-                lbl_checkvice.Text = "For Vice President: " + rdb_vice5.Text;
+                Label_Check_Vice.Text = "For Vice President: " + Radio_Vice_5.Text;
             }
-            else if (rdb_vice6.Checked == true)
+            else if (Radio_Vice_6.Checked == true)
             {
-                lbl_checkvice.Text = "For Vice President: " + rdb_vice6.Text;
+                Label_Check_Vice.Text = "For Vice President: " + Radio_Vice_6.Text;
             }
-            else if (rdb_vice7.Checked == true)
+            else if (Radio_Vice_7.Checked == true)
             {
-                lbl_checkvice.Text = "For Vice President: " + rdb_vice7.Text;
+                Label_Check_Vice.Text = "For Vice President: " + Radio_Vice_7.Text;
             }
-            else if (rdb_vice8.Checked == true)
+            else if (Radio_Vice_8.Checked == true)
             {
-                lbl_checkvice.Text = "For Vice President: " + rdb_vice8.Text;
+                Label_Check_Vice.Text = "For Vice President: " + Radio_Vice_8.Text;
             }
-            else if (rdb_vice9.Checked == true)
+            else if (Radio_Vice_9.Checked == true)
             {
-                lbl_checkvice.Text = "For Vice President: " + rdb_vice9.Text;
+                Label_Check_Vice.Text = "For Vice President: " + Radio_Vice_9.Text;
             }
             else
             {
-                lbl_checkvice.Text = "For Vice President: ";
+                Label_Check_Vice.Text = "For Vice President: ";
             }
-            lbl_checkbirthdate.Text = "Birth Date: " + cmb_birthmonth.Text + " " + cmb_birthday.Text + " " + cmb_birthyear.Text;
-            if (rdb_male.Checked == true)
+            Label_Check_BirthDate.Text = "Birth Date: " + Combo_Birth_Month.Text + " " + Combo_Birth_Day.Text + " " + Combo_Birth_Year.Text;
+            if (Radio_Male.Checked == true)
             {
-                lbl_checkgender.Text = "Gender: Male";
+                Label_Check_Gender.Text = "Gender: Male";
             }
-            else if(rdb_female.Checked == true)
+            else if(Radio_Female.Checked == true)
             {
-                lbl_checkgender.Text = "Gender: Female";
+                Label_Check_Gender.Text = "Gender: Female";
             }
             else
             {
-                lbl_checkgender.Text = "Gender: ";
+                Label_Check_Gender.Text = "Gender: ";
             }
-            if (tbc_main.SelectedIndex == 4)
+            if (TabControl_Main.SelectedIndex == 4)
             {
-                tbc_main_isSubmit = true;
+                TabControl_Main_IsSubmit = true;
             }
             else
             {
-                tbc_main_isSubmit = false;
+                TabControl_Main_IsSubmit = false;
             }
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_pres1_CheckedChanged(object sender)
+        private void Radio_Pres_1_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_pres2_CheckedChanged(object sender)
+        private void Radio_Pres_2_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_pres3_CheckedChanged(object sender)
+        private void Radio_Pres_3_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_pres4_CheckedChanged(object sender)
+        private void Radio_Pres_4_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_pres5_CheckedChanged(object sender)
+        private void Radio_Pres_5_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_pres6_CheckedChanged(object sender)
+        private void Radio_Pres_6_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_pres7_CheckedChanged(object sender)
+        private void Radio_Pres_7_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_pres8_CheckedChanged(object sender)
+        private void Radio_Pres_8_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_pres9_CheckedChanged(object sender)
+        private void Radio_Pres_9_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_pres10_CheckedChanged(object sender)
+        private void Radio_Pres_10_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_vice1_CheckedChanged(object sender)
+        private void Radio_Vice_1_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_vice2_CheckedChanged(object sender)
+        private void Radio_Vice_2_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_vice3_CheckedChanged(object sender)
+        private void Radio_Vice_3_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_vice4_CheckedChanged(object sender)
+        private void Radio_Vice_4_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_vice5_CheckedChanged(object sender)
+        private void Radio_Vice_5_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_vice6_CheckedChanged(object sender)
+        private void Radio_Vice_6_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_vice7_CheckedChanged(object sender)
+        private void Radio_Vice_7_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_vice8_CheckedChanged(object sender)
+        private void Radio_Vice_8_CheckedChanged(object sender)
         {
-            btn_updateState();
+            Button_UpdateState();
         }
-        private void rdb_vice9_CheckedChanged(object sender)
+        private void Radio_Vice_9_CheckedChanged(object sender)
         {
-            btn_updateState(); 
+            Button_UpdateState(); 
         }
     }
 }
