@@ -30,6 +30,9 @@ namespace RegistrationClient
         bool rdb_pres_hasValue = false;
         bool rdb_vice_hasValue = false;
         bool tbc_main_isSubmit = false;
+        // Initialize enableCondition for btn_reset and btn_submit
+        bool btn_reset_enableCondition = false;
+        bool btn_submit_enableCondition = false;
         public RegistrationClient()
         {
             InitializeComponent();
@@ -48,52 +51,18 @@ namespace RegistrationClient
             btn_reset.Enabled = false;
             btn_submit.Enabled = false;
         }
-        private void btn_reset_setValue()
+        private void check_hasValue()
         {
-            if (rdb_pres_hasValue || rdb_vice_hasValue || txt_first_hasValue || txt_middle_hasValue || txt_last_hasValue || rdb_male_hasValue || rdb_female_hasValue || cmb_birthmonth_hasValue || cmb_birthyear_hasValue || cmb_birthday_hasValue || cmb_region_hasValue || cmb_city_hasValue || txt_voterid_hasValue || txt_number_hasValue == true)
-            {
-                btn_reset.Enabled = true;
-            }
-            else
-            {
-                btn_reset.Enabled = false;
-            }
-           btn_submit_setValue();
+            rdb_pres_hasValue = (rdb_pres1.Checked || rdb_pres2.Checked || rdb_pres3.Checked || rdb_pres4.Checked || rdb_pres5.Checked || rdb_pres6.Checked || rdb_pres7.Checked || rdb_pres8.Checked || rdb_pres9.Checked || rdb_pres10.Checked);
+            rdb_vice_hasValue = (rdb_vice1.Checked || rdb_vice2.Checked || rdb_vice3.Checked || rdb_vice4.Checked || rdb_vice5.Checked || rdb_vice6.Checked || rdb_vice7.Checked || rdb_vice8.Checked || rdb_vice9.Checked);
+            btn_reset_enableCondition = (rdb_pres_hasValue || rdb_vice_hasValue || txt_first_hasValue || txt_middle_hasValue || txt_last_hasValue || rdb_male_hasValue || rdb_female_hasValue || cmb_birthmonth_hasValue || cmb_birthyear_hasValue || cmb_birthday_hasValue || cmb_region_hasValue || cmb_city_hasValue || txt_voterid_hasValue || txt_number_hasValue);
+            btn_submit_enableCondition = (tbc_main_isSubmit && rdb_pres_hasValue && rdb_vice_hasValue && txt_first_hasValue && txt_middle_hasValue && txt_last_hasValue && (rdb_male_hasValue || rdb_female_hasValue) && cmb_birthmonth_hasValue && cmb_birthyear_hasValue && cmb_birthday_hasValue && cmb_region_hasValue && cmb_city_hasValue && txt_voterid_hasValue && txt_number_hasValue);
         }
-        private void btn_submit_setValue()
+        private void btn_updateState()
         {
-            if (tbc_main_isSubmit && rdb_pres_hasValue && rdb_vice_hasValue && txt_first_hasValue && txt_middle_hasValue && txt_last_hasValue && ( rdb_male_hasValue || rdb_female_hasValue ) && cmb_birthmonth_hasValue && cmb_birthyear_hasValue && cmb_birthday_hasValue && cmb_region_hasValue && cmb_city_hasValue && txt_voterid_hasValue && txt_number_hasValue == true)
-            {
-                btn_submit.Enabled = true;
-            }
-            else
-            {
-                btn_submit.Enabled = false;
-            }
-        }
-        private void rdb_pres_setValue()
-        {
-            if (rdb_pres1.Checked || rdb_pres2.Checked || rdb_pres3.Checked || rdb_pres4.Checked || rdb_pres5.Checked || rdb_pres6.Checked || rdb_pres7.Checked || rdb_pres8.Checked || rdb_pres9.Checked || rdb_pres10.Checked == true)
-            {
-                rdb_pres_hasValue = true;
-            }
-            else
-            {
-                rdb_pres_hasValue = false;
-            }
-            btn_reset_setValue();
-        }
-        private void rdb_vice_setValue()
-        {
-            if (rdb_vice1.Checked || rdb_vice2.Checked || rdb_vice3.Checked || rdb_vice4.Checked || rdb_vice5.Checked || rdb_vice6.Checked || rdb_vice7.Checked || rdb_vice8.Checked || rdb_vice9.Checked == true)
-            {
-                rdb_vice_hasValue = true;
-            }
-            else
-            {
-                rdb_vice_hasValue = false;
-            }
-            btn_reset_setValue();
+            check_hasValue();
+            btn_reset.Enabled = btn_reset_enableCondition;
+            btn_submit.Enabled = btn_submit_enableCondition;
         }
         private void btn_reset_Click(object sender, EventArgs e)
         {
@@ -152,7 +121,7 @@ namespace RegistrationClient
             lbl_checkvice.Text = "For Vice President: ";
             lbl_checkbirthdate.Text = "Birth Date: ";
             lbl_checkgender.Text = "Gender: ";
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void txt_first_TextChanged(object sender, EventArgs e)
         {
@@ -164,7 +133,7 @@ namespace RegistrationClient
             {
                 txt_first_hasValue = false;
             }
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void cmb_birthmonth_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -177,7 +146,7 @@ namespace RegistrationClient
             { 
 
             }
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void cmb_birthyear_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -190,7 +159,7 @@ namespace RegistrationClient
             {
 
             }
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void cmb_birthday_DropDown(object sender, EventArgs e)
         {
@@ -200,7 +169,7 @@ namespace RegistrationClient
         private void cmb_birthday_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmb_birthday_hasValue = true;
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void txt_last_TextChanged(object sender, EventArgs e)
         {
@@ -212,7 +181,7 @@ namespace RegistrationClient
             {
                 txt_last_hasValue = false;
             }
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void txt_middle_TextChanged(object sender, EventArgs e)
         {
@@ -224,7 +193,7 @@ namespace RegistrationClient
             {
                 txt_middle_hasValue = false;
             }
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void rdb_male_CheckedChanged(object sender)
         {
@@ -236,7 +205,7 @@ namespace RegistrationClient
             {
                 rdb_male_hasValue = false;
             }
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void rdb_female_CheckedChanged(object sender)
         {
@@ -248,12 +217,12 @@ namespace RegistrationClient
             {
                 rdb_female_hasValue = false;
             }
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void cmb_region_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmb_region_hasValue = true;
-            btn_reset_setValue();
+            btn_updateState();
             cmb_city.Enabled = true;
             cmb_city.Items.Clear();
             if (cmb_region.SelectedIndex == 0)
@@ -332,7 +301,7 @@ namespace RegistrationClient
         private void cmb_city_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmb_city_hasValue = true;
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void txt_voterid_TextChanged(object sender, EventArgs e)
         {
@@ -344,7 +313,7 @@ namespace RegistrationClient
             {
                 txt_voterid_hasValue = false;
             }
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void txt_number_TextChanged(object sender, EventArgs e)
         {
@@ -356,7 +325,7 @@ namespace RegistrationClient
             {
                 txt_number_hasValue = false;
             }
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void btn_about_Click(object sender, EventArgs e)
         {
@@ -470,83 +439,83 @@ namespace RegistrationClient
             {
                 tbc_main_isSubmit = false;
             }
-            btn_reset_setValue();
+            btn_updateState();
         }
         private void rdb_pres1_CheckedChanged(object sender)
         {
-            rdb_pres_setValue();
+            btn_updateState();
         }
         private void rdb_pres2_CheckedChanged(object sender)
         {
-            rdb_pres_setValue();
+            btn_updateState();
         }
         private void rdb_pres3_CheckedChanged(object sender)
         {
-            rdb_pres_setValue();
+            btn_updateState();
         }
         private void rdb_pres4_CheckedChanged(object sender)
         {
-            rdb_pres_setValue();
+            btn_updateState();
         }
         private void rdb_pres5_CheckedChanged(object sender)
         {
-            rdb_pres_setValue();
+            btn_updateState();
         }
         private void rdb_pres6_CheckedChanged(object sender)
         {
-            rdb_pres_setValue();
+            btn_updateState();
         }
         private void rdb_pres7_CheckedChanged(object sender)
         {
-            rdb_pres_setValue();
+            btn_updateState();
         }
         private void rdb_pres8_CheckedChanged(object sender)
         {
-            rdb_pres_setValue();
+            btn_updateState();
         }
         private void rdb_pres9_CheckedChanged(object sender)
         {
-            rdb_pres_setValue();
+            btn_updateState();
         }
         private void rdb_pres10_CheckedChanged(object sender)
         {
-            rdb_pres_setValue();
+            btn_updateState();
         }
         private void rdb_vice1_CheckedChanged(object sender)
         {
-            rdb_vice_setValue();
+            btn_updateState();
         }
         private void rdb_vice2_CheckedChanged(object sender)
         {
-            rdb_vice_setValue();
+            btn_updateState();
         }
         private void rdb_vice3_CheckedChanged(object sender)
         {
-            rdb_vice_setValue();
+            btn_updateState();
         }
         private void rdb_vice4_CheckedChanged(object sender)
         {
-            rdb_vice_setValue();
+            btn_updateState();
         }
         private void rdb_vice5_CheckedChanged(object sender)
         {
-            rdb_vice_setValue();
+            btn_updateState();
         }
         private void rdb_vice6_CheckedChanged(object sender)
         {
-            rdb_vice_setValue();
+            btn_updateState();
         }
         private void rdb_vice7_CheckedChanged(object sender)
         {
-            rdb_vice_setValue();
+            btn_updateState();
         }
         private void rdb_vice8_CheckedChanged(object sender)
         {
-            rdb_vice_setValue();
+            btn_updateState();
         }
         private void rdb_vice9_CheckedChanged(object sender)
         {
-            rdb_vice_setValue(); 
+            btn_updateState(); 
         }
     }
 }
