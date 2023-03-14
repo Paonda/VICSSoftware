@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.TabControl_Main = new MetroSet_UI.Controls.MetroSetTabControl();
-            this.tbc_info = new MetroSet_UI.Child.MetroSetSetTabPage();
+            this.TabControl_Info = new MetroSet_UI.Child.MetroSetSetTabPage();
             this.metroSetPanel4 = new MetroSet_UI.Controls.MetroSetPanel();
             this.Text_Voter_Contact = new MetroSet_UI.Controls.MetroSetTextBox();
             this.Label_Voter_Contact = new MetroSet_UI.Controls.MetroSetLabel();
@@ -60,7 +60,7 @@
             this.Label_Name_Last = new MetroSet_UI.Controls.MetroSetLabel();
             this.Text_Name_First = new MetroSet_UI.Controls.MetroSetTextBox();
             this.Label_Name_First = new MetroSet_UI.Controls.MetroSetLabel();
-            this.tbc_pres = new MetroSet_UI.Child.MetroSetSetTabPage();
+            this.TabControl_Pres = new MetroSet_UI.Child.MetroSetSetTabPage();
             this.Panel_Pres_2 = new MetroSet_UI.Controls.MetroSetPanel();
             this.Label_Pres = new MetroSet_UI.Controls.MetroSetLabel();
             this.Panel_Pres_1 = new MetroSet_UI.Controls.MetroSetPanel();
@@ -74,7 +74,7 @@
             this.Radio_Pres_3 = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.Radio_Pres_1 = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.Radio_Pres_2 = new MetroSet_UI.Controls.MetroSetRadioButton();
-            this.tbc_vice = new MetroSet_UI.Child.MetroSetSetTabPage();
+            this.TabControl_Vice = new MetroSet_UI.Child.MetroSetSetTabPage();
             this.Panel_Vice_2 = new MetroSet_UI.Controls.MetroSetPanel();
             this.Label_Vice = new MetroSet_UI.Controls.MetroSetLabel();
             this.Panel_Vice_1 = new MetroSet_UI.Controls.MetroSetPanel();
@@ -87,10 +87,10 @@
             this.Radio_Vice_3 = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.Radio_Vice_1 = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.Radio_Vice_2 = new MetroSet_UI.Controls.MetroSetRadioButton();
-            this.tbc_senator = new MetroSet_UI.Child.MetroSetSetTabPage();
+            this.TabControl_Sen = new MetroSet_UI.Child.MetroSetSetTabPage();
+            this.Panel_Sen = new System.Windows.Forms.Panel();
             this.Label_Sen = new MetroSet_UI.Controls.MetroSetLabel();
-            this.Panel_Sen = new MetroSet_UI.Controls.MetroSetPanel();
-            this.tbc_check = new MetroSet_UI.Child.MetroSetSetTabPage();
+            this.TabControl_Check = new MetroSet_UI.Child.MetroSetSetTabPage();
             this.Panel_Submit = new MetroSet_UI.Controls.MetroSetPanel();
             this.Label_Check_Gender = new MetroSet_UI.Controls.MetroSetLabel();
             this.Label_Check_BirthDate = new MetroSet_UI.Controls.MetroSetLabel();
@@ -104,17 +104,17 @@
             this.Button_About = new MetroSet_UI.Controls.MetroSetButton();
             this.Button_Submit = new MetroSet_UI.Controls.MetroSetButton();
             this.TabControl_Main.SuspendLayout();
-            this.tbc_info.SuspendLayout();
+            this.TabControl_Info.SuspendLayout();
             this.metroSetPanel4.SuspendLayout();
             this.metroSetPanel3.SuspendLayout();
             this.metroSetPanel2.SuspendLayout();
             this.metroSetPanel1.SuspendLayout();
-            this.tbc_pres.SuspendLayout();
+            this.TabControl_Pres.SuspendLayout();
             this.Panel_Pres_1.SuspendLayout();
-            this.tbc_vice.SuspendLayout();
+            this.TabControl_Vice.SuspendLayout();
             this.Panel_Vice_1.SuspendLayout();
-            this.tbc_senator.SuspendLayout();
-            this.tbc_check.SuspendLayout();
+            this.TabControl_Sen.SuspendLayout();
+            this.TabControl_Check.SuspendLayout();
             this.Panel_Submit.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,17 +123,17 @@
             this.TabControl_Main.AnimateEasingType = MetroSet_UI.Enums.EasingType.CubeOut;
             this.TabControl_Main.AnimateTime = 200;
             this.TabControl_Main.BackgroundColor = System.Drawing.Color.White;
-            this.TabControl_Main.Controls.Add(this.tbc_info);
-            this.TabControl_Main.Controls.Add(this.tbc_pres);
-            this.TabControl_Main.Controls.Add(this.tbc_vice);
-            this.TabControl_Main.Controls.Add(this.tbc_senator);
-            this.TabControl_Main.Controls.Add(this.tbc_check);
+            this.TabControl_Main.Controls.Add(this.TabControl_Info);
+            this.TabControl_Main.Controls.Add(this.TabControl_Pres);
+            this.TabControl_Main.Controls.Add(this.TabControl_Vice);
+            this.TabControl_Main.Controls.Add(this.TabControl_Sen);
+            this.TabControl_Main.Controls.Add(this.TabControl_Check);
             this.TabControl_Main.Cursor = System.Windows.Forms.Cursors.Default;
             this.TabControl_Main.IsDerivedStyle = true;
             this.TabControl_Main.ItemSize = new System.Drawing.Size(100, 38);
             this.TabControl_Main.Location = new System.Drawing.Point(-2, 86);
             this.TabControl_Main.Name = "TabControl_Main";
-            this.TabControl_Main.SelectedIndex = 2;
+            this.TabControl_Main.SelectedIndex = 0;
             this.TabControl_Main.SelectedTextColor = System.Drawing.Color.White;
             this.TabControl_Main.Size = new System.Drawing.Size(480, 352);
             this.TabControl_Main.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
@@ -147,31 +147,31 @@
             this.TabControl_Main.UseAnimation = false;
             this.TabControl_Main.SelectedIndexChanged += new System.EventHandler(this.TabControl_Main_SelectedIndexChanged);
             // 
-            // tbc_info
+            // TabControl_Info
             // 
-            this.tbc_info.BaseColor = System.Drawing.Color.White;
-            this.tbc_info.Controls.Add(this.metroSetPanel4);
-            this.tbc_info.Controls.Add(this.Label_Voter);
-            this.tbc_info.Controls.Add(this.Label_Gender);
-            this.tbc_info.Controls.Add(this.metroSetPanel3);
-            this.tbc_info.Controls.Add(this.metroSetPanel2);
-            this.tbc_info.Controls.Add(this.Label_Birth);
-            this.tbc_info.Controls.Add(this.Label_Name);
-            this.tbc_info.Controls.Add(this.metroSetPanel1);
-            this.tbc_info.Font = null;
-            this.tbc_info.ImageIndex = 0;
-            this.tbc_info.ImageKey = null;
-            this.tbc_info.IsDerivedStyle = true;
-            this.tbc_info.Location = new System.Drawing.Point(4, 42);
-            this.tbc_info.Name = "tbc_info";
-            this.tbc_info.Size = new System.Drawing.Size(472, 306);
-            this.tbc_info.Style = MetroSet_UI.Enums.Style.Light;
-            this.tbc_info.StyleManager = null;
-            this.tbc_info.TabIndex = 0;
-            this.tbc_info.Text = "Personal Information";
-            this.tbc_info.ThemeAuthor = "Narwin";
-            this.tbc_info.ThemeName = "MetroLite";
-            this.tbc_info.ToolTipText = null;
+            this.TabControl_Info.BaseColor = System.Drawing.Color.White;
+            this.TabControl_Info.Controls.Add(this.metroSetPanel4);
+            this.TabControl_Info.Controls.Add(this.Label_Voter);
+            this.TabControl_Info.Controls.Add(this.Label_Gender);
+            this.TabControl_Info.Controls.Add(this.metroSetPanel3);
+            this.TabControl_Info.Controls.Add(this.metroSetPanel2);
+            this.TabControl_Info.Controls.Add(this.Label_Birth);
+            this.TabControl_Info.Controls.Add(this.Label_Name);
+            this.TabControl_Info.Controls.Add(this.metroSetPanel1);
+            this.TabControl_Info.Font = null;
+            this.TabControl_Info.ImageIndex = 0;
+            this.TabControl_Info.ImageKey = null;
+            this.TabControl_Info.IsDerivedStyle = true;
+            this.TabControl_Info.Location = new System.Drawing.Point(4, 42);
+            this.TabControl_Info.Name = "TabControl_Info";
+            this.TabControl_Info.Size = new System.Drawing.Size(472, 306);
+            this.TabControl_Info.Style = MetroSet_UI.Enums.Style.Light;
+            this.TabControl_Info.StyleManager = null;
+            this.TabControl_Info.TabIndex = 0;
+            this.TabControl_Info.Text = "Personal Information";
+            this.TabControl_Info.ThemeAuthor = "Narwin";
+            this.TabControl_Info.ThemeName = "MetroLite";
+            this.TabControl_Info.ToolTipText = null;
             // 
             // metroSetPanel4
             // 
@@ -336,24 +336,6 @@
             this.Combo_Voter_Region.IntegralHeight = false;
             this.Combo_Voter_Region.IsDerivedStyle = true;
             this.Combo_Voter_Region.ItemHeight = 20;
-            this.Combo_Voter_Region.Items.AddRange(new object[] {
-            "NCR",
-            "Region I",
-            "CAR",
-            "Region II",
-            "Region III",
-            "Region IV-A",
-            "Region IV-B",
-            "Region V",
-            "Region VI",
-            "Region VII",
-            "Region VIII",
-            "Region IX",
-            "Region X",
-            "Region XI",
-            "Region XII",
-            "Region XIII",
-            "BARMM"});
             this.Combo_Voter_Region.Location = new System.Drawing.Point(6, 22);
             this.Combo_Voter_Region.Name = "Combo_Voter_Region";
             this.Combo_Voter_Region.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -831,26 +813,26 @@
             this.Label_Name_First.ThemeAuthor = "Narwin";
             this.Label_Name_First.ThemeName = "MetroLite";
             // 
-            // tbc_pres
+            // TabControl_Pres
             // 
-            this.tbc_pres.BaseColor = System.Drawing.Color.White;
-            this.tbc_pres.Controls.Add(this.Panel_Pres_2);
-            this.tbc_pres.Controls.Add(this.Label_Pres);
-            this.tbc_pres.Controls.Add(this.Panel_Pres_1);
-            this.tbc_pres.Font = null;
-            this.tbc_pres.ImageIndex = 0;
-            this.tbc_pres.ImageKey = null;
-            this.tbc_pres.IsDerivedStyle = true;
-            this.tbc_pres.Location = new System.Drawing.Point(4, 42);
-            this.tbc_pres.Name = "tbc_pres";
-            this.tbc_pres.Size = new System.Drawing.Size(472, 306);
-            this.tbc_pres.Style = MetroSet_UI.Enums.Style.Light;
-            this.tbc_pres.StyleManager = null;
-            this.tbc_pres.TabIndex = 1;
-            this.tbc_pres.Text = "President";
-            this.tbc_pres.ThemeAuthor = "Narwin";
-            this.tbc_pres.ThemeName = "MetroLite";
-            this.tbc_pres.ToolTipText = null;
+            this.TabControl_Pres.BaseColor = System.Drawing.Color.White;
+            this.TabControl_Pres.Controls.Add(this.Panel_Pres_2);
+            this.TabControl_Pres.Controls.Add(this.Label_Pres);
+            this.TabControl_Pres.Controls.Add(this.Panel_Pres_1);
+            this.TabControl_Pres.Font = null;
+            this.TabControl_Pres.ImageIndex = 0;
+            this.TabControl_Pres.ImageKey = null;
+            this.TabControl_Pres.IsDerivedStyle = true;
+            this.TabControl_Pres.Location = new System.Drawing.Point(4, 42);
+            this.TabControl_Pres.Name = "TabControl_Pres";
+            this.TabControl_Pres.Size = new System.Drawing.Size(472, 306);
+            this.TabControl_Pres.Style = MetroSet_UI.Enums.Style.Light;
+            this.TabControl_Pres.StyleManager = null;
+            this.TabControl_Pres.TabIndex = 1;
+            this.TabControl_Pres.Text = "President";
+            this.TabControl_Pres.ThemeAuthor = "Narwin";
+            this.TabControl_Pres.ThemeName = "MetroLite";
+            this.TabControl_Pres.ToolTipText = null;
             // 
             // Panel_Pres_2
             // 
@@ -1127,26 +1109,26 @@
             this.Radio_Pres_2.ThemeName = "MetroLite";
             this.Radio_Pres_2.CheckedChanged += new MetroSet_UI.Controls.MetroSetRadioButton.CheckedChangedEventHandler(this.Radio_Pres_2_CheckedChanged);
             // 
-            // tbc_vice
+            // TabControl_Vice
             // 
-            this.tbc_vice.BaseColor = System.Drawing.Color.White;
-            this.tbc_vice.Controls.Add(this.Panel_Vice_2);
-            this.tbc_vice.Controls.Add(this.Label_Vice);
-            this.tbc_vice.Controls.Add(this.Panel_Vice_1);
-            this.tbc_vice.Font = null;
-            this.tbc_vice.ImageIndex = 0;
-            this.tbc_vice.ImageKey = null;
-            this.tbc_vice.IsDerivedStyle = true;
-            this.tbc_vice.Location = new System.Drawing.Point(4, 42);
-            this.tbc_vice.Name = "tbc_vice";
-            this.tbc_vice.Size = new System.Drawing.Size(472, 306);
-            this.tbc_vice.Style = MetroSet_UI.Enums.Style.Light;
-            this.tbc_vice.StyleManager = null;
-            this.tbc_vice.TabIndex = 2;
-            this.tbc_vice.Text = "Vice President";
-            this.tbc_vice.ThemeAuthor = "Narwin";
-            this.tbc_vice.ThemeName = "MetroLite";
-            this.tbc_vice.ToolTipText = null;
+            this.TabControl_Vice.BaseColor = System.Drawing.Color.White;
+            this.TabControl_Vice.Controls.Add(this.Panel_Vice_2);
+            this.TabControl_Vice.Controls.Add(this.Label_Vice);
+            this.TabControl_Vice.Controls.Add(this.Panel_Vice_1);
+            this.TabControl_Vice.Font = null;
+            this.TabControl_Vice.ImageIndex = 0;
+            this.TabControl_Vice.ImageKey = null;
+            this.TabControl_Vice.IsDerivedStyle = true;
+            this.TabControl_Vice.Location = new System.Drawing.Point(4, 42);
+            this.TabControl_Vice.Name = "TabControl_Vice";
+            this.TabControl_Vice.Size = new System.Drawing.Size(472, 306);
+            this.TabControl_Vice.Style = MetroSet_UI.Enums.Style.Light;
+            this.TabControl_Vice.StyleManager = null;
+            this.TabControl_Vice.TabIndex = 2;
+            this.TabControl_Vice.Text = "Vice President";
+            this.TabControl_Vice.ThemeAuthor = "Narwin";
+            this.TabControl_Vice.ThemeName = "MetroLite";
+            this.TabControl_Vice.ToolTipText = null;
             // 
             // Panel_Vice_2
             // 
@@ -1400,25 +1382,32 @@
             this.Radio_Vice_2.ThemeName = "MetroLite";
             this.Radio_Vice_2.CheckedChanged += new MetroSet_UI.Controls.MetroSetRadioButton.CheckedChangedEventHandler(this.Radio_Vice_2_CheckedChanged);
             // 
-            // tbc_senator
+            // TabControl_Sen
             // 
-            this.tbc_senator.BaseColor = System.Drawing.Color.White;
-            this.tbc_senator.Controls.Add(this.Label_Sen);
-            this.tbc_senator.Controls.Add(this.Panel_Sen);
-            this.tbc_senator.Font = null;
-            this.tbc_senator.ImageIndex = 0;
-            this.tbc_senator.ImageKey = null;
-            this.tbc_senator.IsDerivedStyle = true;
-            this.tbc_senator.Location = new System.Drawing.Point(4, 42);
-            this.tbc_senator.Name = "tbc_senator";
-            this.tbc_senator.Size = new System.Drawing.Size(472, 306);
-            this.tbc_senator.Style = MetroSet_UI.Enums.Style.Light;
-            this.tbc_senator.StyleManager = null;
-            this.tbc_senator.TabIndex = 5;
-            this.tbc_senator.Text = "Senator";
-            this.tbc_senator.ThemeAuthor = "Narwin";
-            this.tbc_senator.ThemeName = "MetroLite";
-            this.tbc_senator.ToolTipText = null;
+            this.TabControl_Sen.BaseColor = System.Drawing.Color.White;
+            this.TabControl_Sen.Controls.Add(this.Panel_Sen);
+            this.TabControl_Sen.Controls.Add(this.Label_Sen);
+            this.TabControl_Sen.Font = null;
+            this.TabControl_Sen.ImageIndex = 0;
+            this.TabControl_Sen.ImageKey = null;
+            this.TabControl_Sen.IsDerivedStyle = true;
+            this.TabControl_Sen.Location = new System.Drawing.Point(4, 42);
+            this.TabControl_Sen.Name = "TabControl_Sen";
+            this.TabControl_Sen.Size = new System.Drawing.Size(472, 306);
+            this.TabControl_Sen.Style = MetroSet_UI.Enums.Style.Light;
+            this.TabControl_Sen.StyleManager = null;
+            this.TabControl_Sen.TabIndex = 5;
+            this.TabControl_Sen.Text = "Senator";
+            this.TabControl_Sen.ThemeAuthor = "Narwin";
+            this.TabControl_Sen.ThemeName = "MetroLite";
+            this.TabControl_Sen.ToolTipText = null;
+            // 
+            // Panel_Sen
+            // 
+            this.Panel_Sen.Location = new System.Drawing.Point(14, 29);
+            this.Panel_Sen.Name = "Panel_Sen";
+            this.Panel_Sen.Size = new System.Drawing.Size(445, 277);
+            this.Panel_Sen.TabIndex = 25;
             // 
             // Label_Sen
             // 
@@ -1435,39 +1424,24 @@
             this.Label_Sen.ThemeAuthor = "Narwin";
             this.Label_Sen.ThemeName = "MetroLite";
             // 
-            // Panel_Sen
+            // TabControl_Check
             // 
-            this.Panel_Sen.BackgroundColor = System.Drawing.Color.White;
-            this.Panel_Sen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Panel_Sen.BorderThickness = 2;
-            this.Panel_Sen.IsDerivedStyle = true;
-            this.Panel_Sen.Location = new System.Drawing.Point(14, 29);
-            this.Panel_Sen.Name = "Panel_Sen";
-            this.Panel_Sen.Size = new System.Drawing.Size(445, 274);
-            this.Panel_Sen.Style = MetroSet_UI.Enums.Style.Light;
-            this.Panel_Sen.StyleManager = null;
-            this.Panel_Sen.TabIndex = 23;
-            this.Panel_Sen.ThemeAuthor = "Narwin";
-            this.Panel_Sen.ThemeName = "MetroLite";
-            // 
-            // tbc_check
-            // 
-            this.tbc_check.BaseColor = System.Drawing.Color.White;
-            this.tbc_check.Controls.Add(this.Panel_Submit);
-            this.tbc_check.Font = null;
-            this.tbc_check.ImageIndex = 0;
-            this.tbc_check.ImageKey = null;
-            this.tbc_check.IsDerivedStyle = true;
-            this.tbc_check.Location = new System.Drawing.Point(4, 42);
-            this.tbc_check.Name = "tbc_check";
-            this.tbc_check.Size = new System.Drawing.Size(472, 306);
-            this.tbc_check.Style = MetroSet_UI.Enums.Style.Light;
-            this.tbc_check.StyleManager = null;
-            this.tbc_check.TabIndex = 4;
-            this.tbc_check.Text = "Submission";
-            this.tbc_check.ThemeAuthor = "Narwin";
-            this.tbc_check.ThemeName = "MetroLite";
-            this.tbc_check.ToolTipText = null;
+            this.TabControl_Check.BaseColor = System.Drawing.Color.White;
+            this.TabControl_Check.Controls.Add(this.Panel_Submit);
+            this.TabControl_Check.Font = null;
+            this.TabControl_Check.ImageIndex = 0;
+            this.TabControl_Check.ImageKey = null;
+            this.TabControl_Check.IsDerivedStyle = true;
+            this.TabControl_Check.Location = new System.Drawing.Point(4, 42);
+            this.TabControl_Check.Name = "TabControl_Check";
+            this.TabControl_Check.Size = new System.Drawing.Size(472, 306);
+            this.TabControl_Check.Style = MetroSet_UI.Enums.Style.Light;
+            this.TabControl_Check.StyleManager = null;
+            this.TabControl_Check.TabIndex = 4;
+            this.TabControl_Check.Text = "Submission";
+            this.TabControl_Check.ThemeAuthor = "Narwin";
+            this.TabControl_Check.ThemeName = "MetroLite";
+            this.TabControl_Check.ToolTipText = null;
             // 
             // Panel_Submit
             // 
@@ -1720,17 +1694,17 @@
             this.Text = "VICS Software";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.TabControl_Main.ResumeLayout(false);
-            this.tbc_info.ResumeLayout(false);
+            this.TabControl_Info.ResumeLayout(false);
             this.metroSetPanel4.ResumeLayout(false);
             this.metroSetPanel3.ResumeLayout(false);
             this.metroSetPanel2.ResumeLayout(false);
             this.metroSetPanel1.ResumeLayout(false);
-            this.tbc_pres.ResumeLayout(false);
+            this.TabControl_Pres.ResumeLayout(false);
             this.Panel_Pres_1.ResumeLayout(false);
-            this.tbc_vice.ResumeLayout(false);
+            this.TabControl_Vice.ResumeLayout(false);
             this.Panel_Vice_1.ResumeLayout(false);
-            this.tbc_senator.ResumeLayout(false);
-            this.tbc_check.ResumeLayout(false);
+            this.TabControl_Sen.ResumeLayout(false);
+            this.TabControl_Check.ResumeLayout(false);
             this.Panel_Submit.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1739,10 +1713,10 @@
         #endregion
 
         private MetroSet_UI.Controls.MetroSetTabControl TabControl_Main;
-        private MetroSet_UI.Child.MetroSetSetTabPage tbc_info;
-        private MetroSet_UI.Child.MetroSetSetTabPage tbc_pres;
-        private MetroSet_UI.Child.MetroSetSetTabPage tbc_vice;
-        private MetroSet_UI.Child.MetroSetSetTabPage tbc_check;
+        private MetroSet_UI.Child.MetroSetSetTabPage TabControl_Info;
+        private MetroSet_UI.Child.MetroSetSetTabPage TabControl_Pres;
+        private MetroSet_UI.Child.MetroSetSetTabPage TabControl_Vice;
+        private MetroSet_UI.Child.MetroSetSetTabPage TabControl_Check;
         private MetroSet_UI.Controls.MetroSetControlBox metroSetControlBox1;
         private MetroSet_UI.Controls.MetroSetLabel Label_Name;
         private MetroSet_UI.Controls.MetroSetPanel metroSetPanel1;
@@ -1780,7 +1754,7 @@
         private MetroSet_UI.Controls.MetroSetButton Button_About;
         private MetroSet_UI.Controls.MetroSetButton Button_Submit;
         private MetroSet_UI.Controls.MetroSetPanel Panel_Submit;
-        private MetroSet_UI.Child.MetroSetSetTabPage tbc_senator;
+        private MetroSet_UI.Child.MetroSetSetTabPage TabControl_Sen;
         private MetroSet_UI.Controls.MetroSetPanel Panel_Pres_2;
         private MetroSet_UI.Controls.MetroSetLabel Label_Pres;
         private MetroSet_UI.Controls.MetroSetPanel Panel_Pres_1;
@@ -1812,7 +1786,7 @@
         private MetroSet_UI.Controls.MetroSetLabel Label_Check_Gender;
         private MetroSet_UI.Controls.MetroSetLabel Label_Check_BirthDate;
         private MetroSet_UI.Controls.MetroSetLabel Label_Sen;
-        private MetroSet_UI.Controls.MetroSetPanel Panel_Sen;
+        private System.Windows.Forms.Panel Panel_Sen;
     }
 }
 

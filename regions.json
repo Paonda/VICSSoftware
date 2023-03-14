@@ -1,0 +1,206 @@
+{
+  "regionslist": [
+    {
+      "name": "NCR",
+      "citieslist": [
+        { "name": "Manila City" },
+        { "name": "Mandaluyong City" },
+        { "name": "Marikina City" },
+        { "name": "Pasig City" },
+        { "name": "Quezon City" },
+        { "name": "San Juan City" },
+        { "name": "Caloocan City" },
+        { "name": "Malabon City" },
+        { "name": "Navotas City" },
+        { "name": "Valenzuela City" },
+        { "name": "Las Pinas City" },
+        { "name": "Makati City" },
+        { "name": "Muntinlupa City" },
+        { "name": "Paranaque City" },
+        { "name": "Pasay City" },
+        { "name": "Pateros" },
+        { "name": "Taguig City" }
+      ]
+    },
+    {
+      "name": "Region I",
+      "citieslist": [
+        { "name": "Ilocos Norte" },
+        { "name": "Ilocos Sur" },
+        { "name": "La Union" },
+        { "name": "Pangasinan" }
+      ]
+    },
+    {
+      "name": "CAR",
+      "citieslist": [
+        { "name": "Abra" },
+        { "name": "Apayao" },
+        { "name": "Benguet" },
+        { "name": "Ifugao" },
+        { "name": "Kalinga" },
+        { "name": "Mountain Province" },
+        { "name": "Baguio City" }
+      ]
+    },
+    {
+      "name": "Region II",
+      "citieslist": [
+        { "name": "Batanes" },
+        { "name": "Cagayan" },
+        { "name": "Isabela Province" },
+        { "name": "Nueva Vizcaya" },
+        { "name": "Quirino" }
+      ]
+    },
+    {
+      "name": "Region III",
+      "citieslist": [
+        { "name": "Aurora" },
+        { "name": "Bataan" },
+        { "name": "Bulacan" },
+        { "name": "Nueva Ecija" },
+        { "name": "Pampanga" },
+        { "name": "Tarlac" },
+        { "name": "Zambales" },
+        { "name": "Angeles City" },
+        { "name": "Olongapo City" }
+      ]
+    },
+    {
+      "name": "Region IV-A",
+      "citieslist": [
+        { "name": "Batangas" },
+        { "name": "Cavite" },
+        { "name": "Laguna" },
+        { "name": "Quezon Province" },
+        { "name": "Rizal" },
+        { "name": "Lucena City" }
+      ]
+    },
+    {
+      "name": "Region IV-B",
+      "citieslist": [
+        { "name": "Marinduque" },
+        { "name": "Occidental Mindoro" },
+        { "name": "Oriental Mindoro" },
+        { "name": "Palawan" },
+        { "name": "Romblon" },
+        { "name": "Puerto Princesa City" }
+      ]
+    },
+    {
+      "name": "Region V",
+      "citieslist": [
+        { "name": "Albay" },
+        { "name": "Camarines Norte" },
+        { "name": "Camarines Sur" },
+        { "name": "Catanduanes" },
+        { "name": "Masbate" },
+        { "name": "Sorsogon" }
+      ]
+    },
+    {
+      "name": "Region VI",
+      "citieslist": [
+        { "name": "Aklan" },
+        { "name": "Antique" },
+        { "name": "Capiz" },
+        { "name": "Guimaras" },
+        { "name": "Iloilo City" },
+        { "name": "Iloilo Province" },
+        { "name": "Negros Occidental" },
+        { "name": "Bacolod City" }
+      ]
+    },
+    {
+      "name": "Region VII",
+      "citieslist": [
+        { "name": "Bohol" },
+        { "name": "Cebu" },
+        { "name": "Negros Oriental" },
+        { "name": "Siquijor" },
+        { "name": "Cebu City" },
+        { "name": "Lapu-Lapu City" },
+        { "name": "Mandaue City" }
+      ]
+    },
+    {
+      "name": "Region VIII",
+      "citieslist": [
+        { "name": "Biliran" },
+        { "name": "Eastern Samar" },
+        { "name": "Leyte" },
+        { "name": "Northern Samar" },
+        { "name": "Samar" },
+        { "name": "Southern Leyte" },
+        { "name": "Tacloban City" }
+      ]
+    },
+    {
+      "name": "Region IX",
+      "citieslist": [
+        { "name": "Zamboanga del Norte" },
+        { "name": "Zamboanga del Sur" },
+        { "name": "Zamboanga Sibugay" },
+        { "name": "Isabela City" },
+        { "name": "Zamboanga City" }
+      ]
+    },
+    {
+      "name": "Region X",
+      "citieslist": [
+        { "name": "Bukidnon" },
+        { "name": "Camiguin" },
+        { "name": "Lanao del Norte" },
+        { "name": "Misamis Occidental" },
+        { "name": "Misamis Oriental" },
+        { "name": "Cagayan de Oro City" },
+        { "name": "Iligan City" }
+      ]
+    },
+    {
+      "name": "Region XI",
+      "citieslist": [
+        { "name": "Compostela Valley" },
+        { "name": "Davao del Norte" },
+        { "name": "Davao del Sur" },
+        { "name": "Davao Occidental" },
+        { "name": "Davao Oriental" },
+        { "name": "Davao City" }
+      ]
+    },
+    {
+      "name": "Region XII",
+      "citieslist": [
+        { "name": "North Cotabato" },
+        { "name": "Sarangani" },
+        { "name": "South Cotabato" },
+        { "name": "Sultan Kudarat" },
+        { "name": "Cotabato City" },
+        { "name": "General Santos City" }
+      ]
+    },
+    {
+      "name": "Region XIII",
+      "citieslist": [
+        { "name": "Agusan del Norte" },
+        { "name": "Agusan del Sur" },
+        { "name": "Dinagat Islands" },
+        { "name": "Surigao del Norte" },
+        { "name": "Surigao del Sur" },
+        { "name": "Butuan City" }
+      ]
+    },
+    {
+      "name": "BARMM",
+      "citieslist": [
+        { "name": "Basilan" },
+        { "name": "Lanao del Sur" },
+        { "name": "Maguindanao" },
+        { "name": "Sulu" },
+        { "name": "Tawi-Tawi" }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
-﻿using MetroSet_UI.Forms;
+﻿using MetroSet_UI.Controls;
+using MetroSet_UI.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,9 +7,11 @@ using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace RegistrationClient
@@ -32,6 +35,7 @@ namespace RegistrationClient
         bool TabControl_Main_IsSubmit = false;
         bool Button_Reset_EnableCondition = false;
         bool Button_Submit_EnableCondition = false;
+        Regions regions = new Regions();
         public RegistrationClient()
         {
             InitializeComponent();
@@ -49,6 +53,15 @@ namespace RegistrationClient
             Combo_Voter_City.Enabled = false;
             Button_Reset.Enabled = false;
             Button_Submit.Enabled = false;
+            Button_UpdateState();
+        }
+        private void ScrollBar_ValueChanged(object sender, EventArgs e)
+        {
+            Panel_Sen = this.Controls.OfType<Panel>().FirstOrDefault();
+            if (Panel_Sen != null)
+            {
+                Panel_Sen.Top = -((VScrollBar)sender).Value;
+            }
         }
         private void Check_HasValue()
         {
@@ -62,6 +75,12 @@ namespace RegistrationClient
             Check_HasValue();
             Button_Reset.Enabled = Button_Reset_EnableCondition;
             Button_Submit.Enabled = Button_Submit_EnableCondition;
+            string regionsJsonData = File.ReadAllText(@"./regions.json");
+            regions = JsonSerializer.Deserialize<Regions>(regionsJsonData);
+            regions.regionslist.ForEach(delegate (Region region)
+            {
+                Combo_Voter_Region.Items.Add(region.name);
+            });
         }
         private void Button_Reset_Click(object sender, EventArgs e)
         {
@@ -92,6 +111,7 @@ namespace RegistrationClient
             Combo_Voter_City.Items.Clear();
             Combo_Voter_City.Refresh();
             Combo_Voter_City_HasValue = false;
+            Combo_Voter_City.Enabled = false;
             Text_Voter_ID.ResetText();
             Text_Voter_ID_HasValue = false;
             Text_Voter_Contact.ResetText();
@@ -124,38 +144,17 @@ namespace RegistrationClient
         }
         private void Text_Name_First_TextChanged(object sender, EventArgs e)
         {
-            if (Text_Name_First.Text.Length > 0)
-            {
-                Text_Name_First_HasValue = true;
-            }
-            else
-            {
-                Text_Name_First_HasValue = false;
-            }
+            Text_Name_First_HasValue = (Text_Name_First.Text.Length > 0) ? true : false;
             Button_UpdateState();
         }
         private void Text_Name_Last_TextChanged(object sender, EventArgs e)
         {
-            if (Text_Name_Last.Text.Length > 0)
-            {
-                Text_Name_Last_HasValue = true;
-            }
-            else
-            {
-                Text_Name_Last_HasValue = false;
-            }
+            Text_Name_Last_HasValue = (Text_Name_Last.Text.Length > 0) ? true : false;
             Button_UpdateState();
         }
         private void Text_Name_Middle_TextChanged(object sender, EventArgs e)
         {
-            if (Text_Name_Middle.Text.Length > 0)
-            {
-                Text_Name_Middle_HasValue = true;
-            }
-            else
-            {
-                Text_Name_Middle_HasValue = false;
-            }
+            Text_Name_Middle_HasValue = (Text_Name_Middle.Text.Length > 0) ? true : false;
             Button_UpdateState();
         }
         private void Combo_Birth_Month_SelectedIndexChanged(object sender, EventArgs e)
@@ -182,106 +181,28 @@ namespace RegistrationClient
         }
         private void Radio_Male_CheckedChanged(object sender)
         {
-            if(Radio_Male.Checked == true)
-            {
-                Radio_Male_HasValue = true;
-            }
-            else
-            {
-                Radio_Male_HasValue = false;
-            }
+            Radio_Male_HasValue = (Radio_Male.Checked == true) ? true : false;
             Button_UpdateState();
         }
         private void Radio_Female_CheckedChanged(object sender)
         {
-            if (Radio_Female.Checked == true)
-            {
-                Radio_Female_HasValue = true;
-            }
-            else
-            {
-                Radio_Female_HasValue = false;
-            }
+            Radio_Female_HasValue = (Radio_Female.Checked == true) ? true : false;
             Button_UpdateState();
         }
         private void Combo_Voter_Region_SelectedIndexChanged(object sender, EventArgs e)
         {
             Combo_Voter_Region_HasValue = true;
-            Button_UpdateState();
             Combo_Voter_City.Enabled = true;
             Combo_Voter_City.Items.Clear();
-            if (Combo_Voter_Region.SelectedIndex == 0)
+            int RegionID = Combo_Voter_Region.SelectedIndex;
+            if (RegionID != -1)
             {
-                Combo_Voter_City.Items.AddRange(new string[] { "Manila City", "Mandaluyong City", "Marikina City", "Pasig City", "Quezon City", "San Juan City", "Caloocan City", "Malabon City", "Navotas City", "Valenzuela City", "Las Pinas City", "Makati City", "Muntinlupa City", "Paranaque City", "Pasay City", "Pateros", "Taguig City" });
+                regions.regionslist[RegionID].citieslist.ForEach(delegate (City city)
+                {
+                    Combo_Voter_City.Items.Add(city.name);
+                });
             }
-            else if (Combo_Voter_Region.SelectedIndex == 1)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Ilocos Norte", "Ilocos Sur", "La Union", "Pangasinan" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 2)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Abra", "Apayao", "Benguet", "Ifugao", "Kalinga", "Mountain Province", "Baguio City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 3)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Batanes", "Cagayan", "Isabela Province", "Nueva Vizcaya", "Quirino" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 4)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Aurora", "Bataan", "Bulacan", "Nueva Ecija", "Pampanga", "Tarlac", "Zambales", "Angeles City", "Olongapo City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 5)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Batangas", "Cavite", "Laguna", "Quezon Province", "Rizal", "Lucena City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 6)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Marinduque", "Occidental Mindoro", "Oriental Mindoro", "Palawan", "Romblon", "Puerto Princesa City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 7)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Albay", "Camarines Norte", "Camarines Sur", "Catanduanes", "Masbate", "Sorsogon" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 8)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Aklan", "Antique", "Capiz", "Guimaras", "Iloilo City", "Iloilo Province", "Negros Occidental", "Bacolod City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 9)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Bohol", "Cebu", "Negros Oriental", "Siquijor", "Cebu City", "Lapu-Lapu City", "Mandaue City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 10)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Biliran", "Eastern Samar", "Leyte", "Northern Samar", "Samar", "Southern Leyte", "Tacloban City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 11)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Zamboanga del Norte", "Zamboanga del Sur", "Zamboanga Sibugay", "Isabela City", "Zamboanga City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 12)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Bukidnon", "Camiguin", "Lanao del Norte", "Misamis Occidental", "Misamis Oriental", "Cagayan de Oro City", "Iligan City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 13)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Compostela Valley", "Davao del Norte", "Davao del Sur", "Davao Occidental", "Davao Oriental", "Davao City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 14)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "North Cotabato", "Sarangani", "South Cotabato", "Sultan Kudarat", "Cotabato City", "General Santos City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 15)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Agusan del Norte", "Agusan del Sur", "Dinagat Islands", "Surigao del Norte", "Surigao del Sur", "Butuan City" });
-            }
-            else if (Combo_Voter_Region.SelectedIndex == 16)
-            {
-                Combo_Voter_City.Items.AddRange(new string[] { "Basilan", "Lanao del Sur", "Maguindanao", "Sulu", "Tawi-Tawi" });
-            }
-            else
-            {
-                Combo_Voter_City.Enabled = false;
-            }
+            Combo_Voter_City.Refresh();
         }
         private void Combo_Voter_City_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -290,26 +211,12 @@ namespace RegistrationClient
         }
         private void Text_Voter_ID_TextChanged(object sender, EventArgs e)
         {
-            if (Text_Voter_ID.Text.Length > 0)
-            {
-                Text_Voter_ID_HasValue = true;
-            }
-            else
-            {
-                Text_Voter_ID_HasValue = false;
-            }
+            Text_Voter_ID_HasValue = (Text_Voter_ID.Text.Length > 0) ? true : false;
             Button_UpdateState();
         }
         private void Text_Voter_Contact_TextChanged(object sender, EventArgs e)
         {
-            if (Text_Voter_Contact.Text.Length > 0)
-            {
-                Text_Voter_Contact_HasValue = true;
-            }
-            else
-            {
-                Text_Voter_Contact_HasValue = false;
-            }
+            Text_Voter_Contact_HasValue = (Text_Voter_Contact.Text.Length > 0) ? true : false;
             Button_UpdateState();
         }
         private void Button_About_Click(object sender, EventArgs e)
@@ -416,14 +323,41 @@ namespace RegistrationClient
             {
                 Label_Check_Gender.Text = "Gender: ";
             }
-            if (TabControl_Main.SelectedIndex == 4)
+            TabControl_Main_IsSubmit = (TabControl_Main.SelectedIndex == 4) ? true : false;
+            /*
+            if (TabControl_Main.SelectedIndex == 3)
             {
-                TabControl_Main_IsSubmit = true;
+                Panel_Sen.AutoScroll = true;
+                int Panel_Sen_Height_Counter = 0;
+                for (int Panel_Sen_Counter = 0; Panel_Sen_Counter < 64; Panel_Sen_Counter++)
+                {
+                    CheckBox Panel_Sen_Check = new CheckBox();
+                    Panel_Sen_Check.Location = new Point(15, 15 + Panel_Sen_Counter * 20);
+                    Panel_Sen_Check.Text = "CheckBox " + Panel_Sen_Counter;
+                    Panel_Sen.Controls.Add(Panel_Sen_Check);
+                    Panel_Sen_Height_Counter += Panel_Sen_Check.Height;
+                }
+                Panel_Sen.Height = Panel_Sen_Height_Counter;
+                VScrollBar scrollbar = new VScrollBar();
+                scrollbar.Minimum = 0;
+                scrollbar.Maximum = Panel_Sen.Height - Panel_Sen.ClientSize.Height;
+                scrollbar.LargeChange = Panel_Sen.ClientSize.Height;
+                scrollbar.Location = new Point(Panel_Sen.Right, Panel_Sen.Top);
+                scrollbar.Width = SystemInformation.VerticalScrollBarWidth;
+                scrollbar.Height = Panel_Sen.Height;
+                scrollbar.ValueChanged += new EventHandler(ScrollBar_ValueChanged);
+                Panel_Sen.Controls.Add(scrollbar);
+                Panel_Sen.Resize += (s, args) =>
+                {
+                    scrollbar.Maximum = Panel_Sen.Height - Panel_Sen.ClientSize.Height;
+                    scrollbar.LargeChange = Panel_Sen.ClientSize.Height;
+                };
             }
             else
             {
-                TabControl_Main_IsSubmit = false;
+
             }
+            */
             Button_UpdateState();
         }
         private void Radio_Pres_1_CheckedChanged(object sender)
