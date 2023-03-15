@@ -88,10 +88,36 @@
             this.Radio_Vice_1 = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.Radio_Vice_2 = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.TabControl_Sen = new MetroSet_UI.Child.MetroSetSetTabPage();
-            this.Panel_Sen = new System.Windows.Forms.Panel();
+            this.Panel_Sen = new MetroSet_UI.Controls.MetroSetPanel();
+            this.Radio_Sen_22 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_21 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_20 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_19 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_18 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_17 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_16 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_15 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_14 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_13 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_12 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_11 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_10 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_9 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_8 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_7 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_6 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_5 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_4 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_3 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_2 = new MetroSet_UI.Controls.MetroSetCheckBox();
+            this.Radio_Sen_1 = new MetroSet_UI.Controls.MetroSetCheckBox();
             this.Label_Sen = new MetroSet_UI.Controls.MetroSetLabel();
             this.TabControl_Check = new MetroSet_UI.Child.MetroSetSetTabPage();
             this.Panel_Submit = new MetroSet_UI.Controls.MetroSetPanel();
+            this.Label_Check_Contact = new MetroSet_UI.Controls.MetroSetLabel();
+            this.Label_Check_Voter_ID = new MetroSet_UI.Controls.MetroSetLabel();
+            this.Label_Check_City = new MetroSet_UI.Controls.MetroSetLabel();
+            this.Label_Check_Region = new MetroSet_UI.Controls.MetroSetLabel();
             this.Label_Check_Gender = new MetroSet_UI.Controls.MetroSetLabel();
             this.Label_Check_BirthDate = new MetroSet_UI.Controls.MetroSetLabel();
             this.Label_Check_Vice = new MetroSet_UI.Controls.MetroSetLabel();
@@ -103,6 +129,7 @@
             this.Button_Reset = new MetroSet_UI.Controls.MetroSetButton();
             this.Button_About = new MetroSet_UI.Controls.MetroSetButton();
             this.Button_Submit = new MetroSet_UI.Controls.MetroSetButton();
+            this.Label_Check_Sen = new MetroSet_UI.Controls.MetroSetLabel();
             this.TabControl_Main.SuspendLayout();
             this.TabControl_Info.SuspendLayout();
             this.metroSetPanel4.SuspendLayout();
@@ -114,6 +141,7 @@
             this.TabControl_Vice.SuspendLayout();
             this.Panel_Vice_1.SuspendLayout();
             this.TabControl_Sen.SuspendLayout();
+            this.Panel_Sen.SuspendLayout();
             this.TabControl_Check.SuspendLayout();
             this.Panel_Submit.SuspendLayout();
             this.SuspendLayout();
@@ -1404,10 +1432,579 @@
             // 
             // Panel_Sen
             // 
+            this.Panel_Sen.BackgroundColor = System.Drawing.Color.White;
+            this.Panel_Sen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.Panel_Sen.BorderThickness = 2;
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_22);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_21);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_20);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_19);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_18);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_17);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_16);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_15);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_14);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_13);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_12);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_11);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_10);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_9);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_8);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_7);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_6);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_5);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_4);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_3);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_2);
+            this.Panel_Sen.Controls.Add(this.Radio_Sen_1);
+            this.Panel_Sen.IsDerivedStyle = true;
             this.Panel_Sen.Location = new System.Drawing.Point(14, 29);
             this.Panel_Sen.Name = "Panel_Sen";
             this.Panel_Sen.Size = new System.Drawing.Size(445, 277);
-            this.Panel_Sen.TabIndex = 25;
+            this.Panel_Sen.Style = MetroSet_UI.Enums.Style.Light;
+            this.Panel_Sen.StyleManager = null;
+            this.Panel_Sen.TabIndex = 0;
+            this.Panel_Sen.ThemeAuthor = "Narwin";
+            this.Panel_Sen.ThemeName = "MetroLite";
+            // 
+            // Radio_Sen_22
+            // 
+            this.Radio_Sen_22.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_22.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_22.Checked = false;
+            this.Radio_Sen_22.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_22.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_22.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_22.IsDerivedStyle = true;
+            this.Radio_Sen_22.Location = new System.Drawing.Point(230, 240);
+            this.Radio_Sen_22.Name = "Radio_Sen_22";
+            this.Radio_Sen_22.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Radio_Sen_22.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_22.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_22.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_22.StyleManager = null;
+            this.Radio_Sen_22.TabIndex = 21;
+            this.Radio_Sen_22.Text = "Zubiri, Migz (IND)";
+            this.Radio_Sen_22.ThemeAuthor = "Narwin";
+            this.Radio_Sen_22.ThemeName = "MetroLite";
+            this.Radio_Sen_22.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_22_CheckedChanged);
+            // 
+            // Radio_Sen_21
+            // 
+            this.Radio_Sen_21.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_21.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_21.Checked = false;
+            this.Radio_Sen_21.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_21.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_21.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_21.IsDerivedStyle = true;
+            this.Radio_Sen_21.Location = new System.Drawing.Point(230, 218);
+            this.Radio_Sen_21.Name = "Radio_Sen_21";
+            this.Radio_Sen_21.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Radio_Sen_21.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_21.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_21.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_21.StyleManager = null;
+            this.Radio_Sen_21.TabIndex = 20;
+            this.Radio_Sen_21.Text = "Villar, Mark (NP)";
+            this.Radio_Sen_21.ThemeAuthor = "Narwin";
+            this.Radio_Sen_21.ThemeName = "MetroLite";
+            this.Radio_Sen_21.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_21_CheckedChanged);
+            // 
+            // Radio_Sen_20
+            // 
+            this.Radio_Sen_20.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_20.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_20.Checked = false;
+            this.Radio_Sen_20.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_20.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_20.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_20.IsDerivedStyle = true;
+            this.Radio_Sen_20.Location = new System.Drawing.Point(230, 196);
+            this.Radio_Sen_20.Name = "Radio_Sen_20";
+            this.Radio_Sen_20.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Radio_Sen_20.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_20.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_20.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_20.StyleManager = null;
+            this.Radio_Sen_20.TabIndex = 19;
+            this.Radio_Sen_20.Text = "Villanueva, Joel (IND)";
+            this.Radio_Sen_20.ThemeAuthor = "Narwin";
+            this.Radio_Sen_20.ThemeName = "MetroLite";
+            this.Radio_Sen_20.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_20_CheckedChanged);
+            // 
+            // Radio_Sen_19
+            // 
+            this.Radio_Sen_19.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_19.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_19.Checked = false;
+            this.Radio_Sen_19.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_19.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_19.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_19.IsDerivedStyle = true;
+            this.Radio_Sen_19.Location = new System.Drawing.Point(230, 174);
+            this.Radio_Sen_19.Name = "Radio_Sen_19";
+            this.Radio_Sen_19.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Radio_Sen_19.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_19.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_19.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_19.StyleManager = null;
+            this.Radio_Sen_19.TabIndex = 18;
+            this.Radio_Sen_19.Text = "Tulfo, Idol Raffy (IND)";
+            this.Radio_Sen_19.ThemeAuthor = "Narwin";
+            this.Radio_Sen_19.ThemeName = "MetroLite";
+            this.Radio_Sen_19.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_19_CheckedChanged);
+            // 
+            // Radio_Sen_18
+            // 
+            this.Radio_Sen_18.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_18.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_18.Checked = false;
+            this.Radio_Sen_18.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_18.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_18.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_18.IsDerivedStyle = true;
+            this.Radio_Sen_18.Location = new System.Drawing.Point(230, 152);
+            this.Radio_Sen_18.Name = "Radio_Sen_18";
+            this.Radio_Sen_18.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Radio_Sen_18.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_18.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_18.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_18.StyleManager = null;
+            this.Radio_Sen_18.TabIndex = 17;
+            this.Radio_Sen_18.Text = "Trillanes, Antonio IV (LP)";
+            this.Radio_Sen_18.ThemeAuthor = "Narwin";
+            this.Radio_Sen_18.ThemeName = "MetroLite";
+            this.Radio_Sen_18.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_18_CheckedChanged);
+            // 
+            // Radio_Sen_17
+            // 
+            this.Radio_Sen_17.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_17.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_17.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_17.Checked = false;
+            this.Radio_Sen_17.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_17.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_17.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_17.IsDerivedStyle = true;
+            this.Radio_Sen_17.Location = new System.Drawing.Point(230, 130);
+            this.Radio_Sen_17.Name = "Radio_Sen_17";
+            this.Radio_Sen_17.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Radio_Sen_17.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_17.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_17.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_17.StyleManager = null;
+            this.Radio_Sen_17.TabIndex = 16;
+            this.Radio_Sen_17.Text = "Teodoro, Gibo (PRP)";
+            this.Radio_Sen_17.ThemeAuthor = "Narwin";
+            this.Radio_Sen_17.ThemeName = "MetroLite";
+            this.Radio_Sen_17.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_17_CheckedChanged);
+            // 
+            // Radio_Sen_16
+            // 
+            this.Radio_Sen_16.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_16.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_16.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_16.Checked = false;
+            this.Radio_Sen_16.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_16.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_16.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_16.IsDerivedStyle = true;
+            this.Radio_Sen_16.Location = new System.Drawing.Point(230, 108);
+            this.Radio_Sen_16.Name = "Radio_Sen_16";
+            this.Radio_Sen_16.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Radio_Sen_16.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_16.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_16.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_16.StyleManager = null;
+            this.Radio_Sen_16.TabIndex = 15;
+            this.Radio_Sen_16.Text = "Roque, Harry Spox (PRP)";
+            this.Radio_Sen_16.ThemeAuthor = "Narwin";
+            this.Radio_Sen_16.ThemeName = "MetroLite";
+            this.Radio_Sen_16.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_16_CheckedChanged);
+            // 
+            // Radio_Sen_15
+            // 
+            this.Radio_Sen_15.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_15.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_15.Checked = false;
+            this.Radio_Sen_15.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_15.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_15.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_15.IsDerivedStyle = true;
+            this.Radio_Sen_15.Location = new System.Drawing.Point(230, 86);
+            this.Radio_Sen_15.Name = "Radio_Sen_15";
+            this.Radio_Sen_15.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Radio_Sen_15.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_15.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_15.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_15.StyleManager = null;
+            this.Radio_Sen_15.TabIndex = 14;
+            this.Radio_Sen_15.Text = "Padilla, Robin (PDPLBN)";
+            this.Radio_Sen_15.ThemeAuthor = "Narwin";
+            this.Radio_Sen_15.ThemeName = "MetroLite";
+            this.Radio_Sen_15.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_15_CheckedChanged);
+            // 
+            // Radio_Sen_14
+            // 
+            this.Radio_Sen_14.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_14.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_14.Checked = false;
+            this.Radio_Sen_14.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_14.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_14.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_14.IsDerivedStyle = true;
+            this.Radio_Sen_14.Location = new System.Drawing.Point(230, 64);
+            this.Radio_Sen_14.Name = "Radio_Sen_14";
+            this.Radio_Sen_14.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Radio_Sen_14.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_14.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_14.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_14.StyleManager = null;
+            this.Radio_Sen_14.TabIndex = 13;
+            this.Radio_Sen_14.Text = "Legarda, Loren (NPC)";
+            this.Radio_Sen_14.ThemeAuthor = "Narwin";
+            this.Radio_Sen_14.ThemeName = "MetroLite";
+            this.Radio_Sen_14.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_14_CheckedChanged);
+            // 
+            // Radio_Sen_13
+            // 
+            this.Radio_Sen_13.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_13.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_13.Checked = false;
+            this.Radio_Sen_13.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_13.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_13.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_13.IsDerivedStyle = true;
+            this.Radio_Sen_13.Location = new System.Drawing.Point(230, 42);
+            this.Radio_Sen_13.Name = "Radio_Sen_13";
+            this.Radio_Sen_13.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Radio_Sen_13.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_13.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_13.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_13.StyleManager = null;
+            this.Radio_Sen_13.TabIndex = 12;
+            this.Radio_Sen_13.Text = "Hontiveros, Risa (AKBAYAN)";
+            this.Radio_Sen_13.ThemeAuthor = "Narwin";
+            this.Radio_Sen_13.ThemeName = "MetroLite";
+            this.Radio_Sen_13.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_13_CheckedChanged);
+            // 
+            // Radio_Sen_12
+            // 
+            this.Radio_Sen_12.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_12.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_12.Checked = false;
+            this.Radio_Sen_12.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_12.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_12.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_12.IsDerivedStyle = true;
+            this.Radio_Sen_12.Location = new System.Drawing.Point(230, 20);
+            this.Radio_Sen_12.Name = "Radio_Sen_12";
+            this.Radio_Sen_12.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Radio_Sen_12.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_12.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_12.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_12.StyleManager = null;
+            this.Radio_Sen_12.TabIndex = 11;
+            this.Radio_Sen_12.Text = "Honasan, Gringo (IND)";
+            this.Radio_Sen_12.ThemeAuthor = "Narwin";
+            this.Radio_Sen_12.ThemeName = "MetroLite";
+            this.Radio_Sen_12.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_12_CheckedChanged);
+            // 
+            // Radio_Sen_11
+            // 
+            this.Radio_Sen_11.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_11.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_11.Checked = false;
+            this.Radio_Sen_11.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_11.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_11.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_11.IsDerivedStyle = true;
+            this.Radio_Sen_11.Location = new System.Drawing.Point(15, 240);
+            this.Radio_Sen_11.Name = "Radio_Sen_11";
+            this.Radio_Sen_11.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_11.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_11.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_11.StyleManager = null;
+            this.Radio_Sen_11.TabIndex = 10;
+            this.Radio_Sen_11.Text = "Gordon, Wow Dick (BVNP)";
+            this.Radio_Sen_11.ThemeAuthor = "Narwin";
+            this.Radio_Sen_11.ThemeName = "MetroLite";
+            this.Radio_Sen_11.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_11_CheckedChanged);
+            // 
+            // Radio_Sen_10
+            // 
+            this.Radio_Sen_10.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_10.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_10.Checked = false;
+            this.Radio_Sen_10.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_10.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_10.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_10.IsDerivedStyle = true;
+            this.Radio_Sen_10.Location = new System.Drawing.Point(15, 218);
+            this.Radio_Sen_10.Name = "Radio_Sen_10";
+            this.Radio_Sen_10.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_10.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_10.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_10.StyleManager = null;
+            this.Radio_Sen_10.TabIndex = 9;
+            this.Radio_Sen_10.Text = "Gatchalian, Win (NPC)";
+            this.Radio_Sen_10.ThemeAuthor = "Narwin";
+            this.Radio_Sen_10.ThemeName = "MetroLite";
+            this.Radio_Sen_10.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_10_CheckedChanged);
+            // 
+            // Radio_Sen_9
+            // 
+            this.Radio_Sen_9.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_9.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_9.Checked = false;
+            this.Radio_Sen_9.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_9.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_9.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_9.IsDerivedStyle = true;
+            this.Radio_Sen_9.Location = new System.Drawing.Point(15, 196);
+            this.Radio_Sen_9.Name = "Radio_Sen_9";
+            this.Radio_Sen_9.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_9.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_9.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_9.StyleManager = null;
+            this.Radio_Sen_9.TabIndex = 8;
+            this.Radio_Sen_9.Text = "Gadon, Larry (KBL)";
+            this.Radio_Sen_9.ThemeAuthor = "Narwin";
+            this.Radio_Sen_9.ThemeName = "MetroLite";
+            this.Radio_Sen_9.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_9_CheckedChanged);
+            // 
+            // Radio_Sen_8
+            // 
+            this.Radio_Sen_8.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_8.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_8.Checked = false;
+            this.Radio_Sen_8.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_8.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_8.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_8.IsDerivedStyle = true;
+            this.Radio_Sen_8.Location = new System.Drawing.Point(15, 174);
+            this.Radio_Sen_8.Name = "Radio_Sen_8";
+            this.Radio_Sen_8.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_8.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_8.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_8.StyleManager = null;
+            this.Radio_Sen_8.TabIndex = 7;
+            this.Radio_Sen_8.Text = "Estrada, Jinggoy (PMP)";
+            this.Radio_Sen_8.ThemeAuthor = "Narwin";
+            this.Radio_Sen_8.ThemeName = "MetroLite";
+            this.Radio_Sen_8.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_8_CheckedChanged);
+            // 
+            // Radio_Sen_7
+            // 
+            this.Radio_Sen_7.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_7.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_7.Checked = false;
+            this.Radio_Sen_7.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_7.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_7.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_7.IsDerivedStyle = true;
+            this.Radio_Sen_7.Location = new System.Drawing.Point(15, 152);
+            this.Radio_Sen_7.Name = "Radio_Sen_7";
+            this.Radio_Sen_7.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_7.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_7.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_7.StyleManager = null;
+            this.Radio_Sen_7.TabIndex = 6;
+            this.Radio_Sen_7.Text = "Escudero, Chiz (NPC)";
+            this.Radio_Sen_7.ThemeAuthor = "Narwin";
+            this.Radio_Sen_7.ThemeName = "MetroLite";
+            this.Radio_Sen_7.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_7_CheckedChanged);
+            // 
+            // Radio_Sen_6
+            // 
+            this.Radio_Sen_6.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_6.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_6.Checked = false;
+            this.Radio_Sen_6.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_6.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_6.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_6.IsDerivedStyle = true;
+            this.Radio_Sen_6.Location = new System.Drawing.Point(15, 130);
+            this.Radio_Sen_6.Name = "Radio_Sen_6";
+            this.Radio_Sen_6.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_6.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_6.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_6.StyleManager = null;
+            this.Radio_Sen_6.TabIndex = 5;
+            this.Radio_Sen_6.Text = "Eleazar, Gen. Guillermo (PDR)";
+            this.Radio_Sen_6.ThemeAuthor = "Narwin";
+            this.Radio_Sen_6.ThemeName = "MetroLite";
+            this.Radio_Sen_6.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_6_CheckedChanged);
+            // 
+            // Radio_Sen_5
+            // 
+            this.Radio_Sen_5.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_5.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_5.Checked = false;
+            this.Radio_Sen_5.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_5.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_5.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_5.IsDerivedStyle = true;
+            this.Radio_Sen_5.Location = new System.Drawing.Point(15, 108);
+            this.Radio_Sen_5.Name = "Radio_Sen_5";
+            this.Radio_Sen_5.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_5.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_5.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_5.StyleManager = null;
+            this.Radio_Sen_5.TabIndex = 4;
+            this.Radio_Sen_5.Text = "Ejercito, JV Estrada (NPC)";
+            this.Radio_Sen_5.ThemeAuthor = "Narwin";
+            this.Radio_Sen_5.ThemeName = "MetroLite";
+            this.Radio_Sen_5.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_5_CheckedChanged);
+            // 
+            // Radio_Sen_4
+            // 
+            this.Radio_Sen_4.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_4.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_4.Checked = false;
+            this.Radio_Sen_4.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_4.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_4.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_4.IsDerivedStyle = true;
+            this.Radio_Sen_4.Location = new System.Drawing.Point(15, 86);
+            this.Radio_Sen_4.Name = "Radio_Sen_4";
+            this.Radio_Sen_4.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_4.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_4.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_4.StyleManager = null;
+            this.Radio_Sen_4.TabIndex = 3;
+            this.Radio_Sen_4.Text = "Diokno, Chel (KANP)";
+            this.Radio_Sen_4.ThemeAuthor = "Narwin";
+            this.Radio_Sen_4.ThemeName = "MetroLite";
+            this.Radio_Sen_4.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_4_CheckedChanged);
+            // 
+            // Radio_Sen_3
+            // 
+            this.Radio_Sen_3.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_3.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_3.Checked = false;
+            this.Radio_Sen_3.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_3.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_3.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_3.IsDerivedStyle = true;
+            this.Radio_Sen_3.Location = new System.Drawing.Point(15, 64);
+            this.Radio_Sen_3.Name = "Radio_Sen_3";
+            this.Radio_Sen_3.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_3.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_3.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_3.StyleManager = null;
+            this.Radio_Sen_3.TabIndex = 2;
+            this.Radio_Sen_3.Text = "Cayetano, Alan Peter (IND)";
+            this.Radio_Sen_3.ThemeAuthor = "Narwin";
+            this.Radio_Sen_3.ThemeName = "MetroLite";
+            this.Radio_Sen_3.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_3_CheckedChanged);
+            // 
+            // Radio_Sen_2
+            // 
+            this.Radio_Sen_2.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_2.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_2.Checked = false;
+            this.Radio_Sen_2.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_2.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_2.IsDerivedStyle = true;
+            this.Radio_Sen_2.Location = new System.Drawing.Point(15, 42);
+            this.Radio_Sen_2.Name = "Radio_Sen_2";
+            this.Radio_Sen_2.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_2.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_2.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_2.StyleManager = null;
+            this.Radio_Sen_2.TabIndex = 1;
+            this.Radio_Sen_2.Text = "Binay, Jojo (UNA)";
+            this.Radio_Sen_2.ThemeAuthor = "Narwin";
+            this.Radio_Sen_2.ThemeName = "MetroLite";
+            this.Radio_Sen_2.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_2_CheckedChanged);
+            // 
+            // Radio_Sen_1
+            // 
+            this.Radio_Sen_1.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Sen_1.BackgroundColor = System.Drawing.Color.White;
+            this.Radio_Sen_1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Radio_Sen_1.Checked = false;
+            this.Radio_Sen_1.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Radio_Sen_1.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.Radio_Sen_1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Radio_Sen_1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.Radio_Sen_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Radio_Sen_1.IsDerivedStyle = true;
+            this.Radio_Sen_1.Location = new System.Drawing.Point(15, 20);
+            this.Radio_Sen_1.Name = "Radio_Sen_1";
+            this.Radio_Sen_1.SignStyle = MetroSet_UI.Enums.SignStyle.Sign;
+            this.Radio_Sen_1.Size = new System.Drawing.Size(200, 16);
+            this.Radio_Sen_1.Style = MetroSet_UI.Enums.Style.Light;
+            this.Radio_Sen_1.StyleManager = null;
+            this.Radio_Sen_1.TabIndex = 0;
+            this.Radio_Sen_1.Text = "Bautista, Herbert Bistek (NPC)";
+            this.Radio_Sen_1.ThemeAuthor = "Narwin";
+            this.Radio_Sen_1.ThemeName = "MetroLite";
+            this.Radio_Sen_1.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.Radio_Sen_1_CheckedChanged);
             // 
             // Label_Sen
             // 
@@ -1448,6 +2045,11 @@
             this.Panel_Submit.BackgroundColor = System.Drawing.Color.White;
             this.Panel_Submit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.Panel_Submit.BorderThickness = 2;
+            this.Panel_Submit.Controls.Add(this.Label_Check_Sen);
+            this.Panel_Submit.Controls.Add(this.Label_Check_Contact);
+            this.Panel_Submit.Controls.Add(this.Label_Check_Voter_ID);
+            this.Panel_Submit.Controls.Add(this.Label_Check_City);
+            this.Panel_Submit.Controls.Add(this.Label_Check_Region);
             this.Panel_Submit.Controls.Add(this.Label_Check_Gender);
             this.Panel_Submit.Controls.Add(this.Label_Check_BirthDate);
             this.Panel_Submit.Controls.Add(this.Label_Check_Vice);
@@ -1463,13 +2065,73 @@
             this.Panel_Submit.ThemeAuthor = "Narwin";
             this.Panel_Submit.ThemeName = "MetroLite";
             // 
+            // Label_Check_Contact
+            // 
+            this.Label_Check_Contact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Check_Contact.IsDerivedStyle = true;
+            this.Label_Check_Contact.Location = new System.Drawing.Point(211, 48);
+            this.Label_Check_Contact.Name = "Label_Check_Contact";
+            this.Label_Check_Contact.Size = new System.Drawing.Size(225, 15);
+            this.Label_Check_Contact.Style = MetroSet_UI.Enums.Style.Light;
+            this.Label_Check_Contact.StyleManager = null;
+            this.Label_Check_Contact.TabIndex = 11;
+            this.Label_Check_Contact.Text = "Contact: ";
+            this.Label_Check_Contact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Label_Check_Contact.ThemeAuthor = "Narwin";
+            this.Label_Check_Contact.ThemeName = "MetroLite";
+            // 
+            // Label_Check_Voter_ID
+            // 
+            this.Label_Check_Voter_ID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Check_Voter_ID.IsDerivedStyle = true;
+            this.Label_Check_Voter_ID.Location = new System.Drawing.Point(5, 48);
+            this.Label_Check_Voter_ID.Name = "Label_Check_Voter_ID";
+            this.Label_Check_Voter_ID.Size = new System.Drawing.Size(200, 15);
+            this.Label_Check_Voter_ID.Style = MetroSet_UI.Enums.Style.Light;
+            this.Label_Check_Voter_ID.StyleManager = null;
+            this.Label_Check_Voter_ID.TabIndex = 10;
+            this.Label_Check_Voter_ID.Text = "Voter ID: ";
+            this.Label_Check_Voter_ID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Label_Check_Voter_ID.ThemeAuthor = "Narwin";
+            this.Label_Check_Voter_ID.ThemeName = "MetroLite";
+            // 
+            // Label_Check_City
+            // 
+            this.Label_Check_City.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Check_City.IsDerivedStyle = true;
+            this.Label_Check_City.Location = new System.Drawing.Point(211, 33);
+            this.Label_Check_City.Name = "Label_Check_City";
+            this.Label_Check_City.Size = new System.Drawing.Size(225, 15);
+            this.Label_Check_City.Style = MetroSet_UI.Enums.Style.Light;
+            this.Label_Check_City.StyleManager = null;
+            this.Label_Check_City.TabIndex = 9;
+            this.Label_Check_City.Text = "City: ";
+            this.Label_Check_City.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Label_Check_City.ThemeAuthor = "Narwin";
+            this.Label_Check_City.ThemeName = "MetroLite";
+            // 
+            // Label_Check_Region
+            // 
+            this.Label_Check_Region.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Check_Region.IsDerivedStyle = true;
+            this.Label_Check_Region.Location = new System.Drawing.Point(5, 33);
+            this.Label_Check_Region.Name = "Label_Check_Region";
+            this.Label_Check_Region.Size = new System.Drawing.Size(200, 15);
+            this.Label_Check_Region.Style = MetroSet_UI.Enums.Style.Light;
+            this.Label_Check_Region.StyleManager = null;
+            this.Label_Check_Region.TabIndex = 8;
+            this.Label_Check_Region.Text = "Region: ";
+            this.Label_Check_Region.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Label_Check_Region.ThemeAuthor = "Narwin";
+            this.Label_Check_Region.ThemeName = "MetroLite";
+            // 
             // Label_Check_Gender
             // 
             this.Label_Check_Gender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Check_Gender.IsDerivedStyle = true;
-            this.Label_Check_Gender.Location = new System.Drawing.Point(272, 18);
+            this.Label_Check_Gender.Location = new System.Drawing.Point(211, 18);
             this.Label_Check_Gender.Name = "Label_Check_Gender";
-            this.Label_Check_Gender.Size = new System.Drawing.Size(165, 15);
+            this.Label_Check_Gender.Size = new System.Drawing.Size(225, 15);
             this.Label_Check_Gender.Style = MetroSet_UI.Enums.Style.Light;
             this.Label_Check_Gender.StyleManager = null;
             this.Label_Check_Gender.TabIndex = 7;
@@ -1484,7 +2146,7 @@
             this.Label_Check_BirthDate.IsDerivedStyle = true;
             this.Label_Check_BirthDate.Location = new System.Drawing.Point(5, 18);
             this.Label_Check_BirthDate.Name = "Label_Check_BirthDate";
-            this.Label_Check_BirthDate.Size = new System.Drawing.Size(261, 15);
+            this.Label_Check_BirthDate.Size = new System.Drawing.Size(200, 15);
             this.Label_Check_BirthDate.Style = MetroSet_UI.Enums.Style.Light;
             this.Label_Check_BirthDate.StyleManager = null;
             this.Label_Check_BirthDate.TabIndex = 6;
@@ -1497,7 +2159,7 @@
             // 
             this.Label_Check_Vice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Check_Vice.IsDerivedStyle = true;
-            this.Label_Check_Vice.Location = new System.Drawing.Point(5, 72);
+            this.Label_Check_Vice.Location = new System.Drawing.Point(5, 89);
             this.Label_Check_Vice.Name = "Label_Check_Vice";
             this.Label_Check_Vice.Size = new System.Drawing.Size(432, 15);
             this.Label_Check_Vice.Style = MetroSet_UI.Enums.Style.Light;
@@ -1512,7 +2174,7 @@
             // 
             this.Label_Check_Pres.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Check_Pres.IsDerivedStyle = true;
-            this.Label_Check_Pres.Location = new System.Drawing.Point(5, 57);
+            this.Label_Check_Pres.Location = new System.Drawing.Point(5, 74);
             this.Label_Check_Pres.Name = "Label_Check_Pres";
             this.Label_Check_Pres.Size = new System.Drawing.Size(432, 15);
             this.Label_Check_Pres.Style = MetroSet_UI.Enums.Style.Light;
@@ -1674,6 +2336,20 @@
             this.Button_Submit.ThemeAuthor = "Narwin";
             this.Button_Submit.ThemeName = "MetroLite";
             // 
+            // Label_Check_Sen
+            // 
+            this.Label_Check_Sen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Check_Sen.IsDerivedStyle = true;
+            this.Label_Check_Sen.Location = new System.Drawing.Point(5, 104);
+            this.Label_Check_Sen.Name = "Label_Check_Sen";
+            this.Label_Check_Sen.Size = new System.Drawing.Size(432, 165);
+            this.Label_Check_Sen.Style = MetroSet_UI.Enums.Style.Light;
+            this.Label_Check_Sen.StyleManager = null;
+            this.Label_Check_Sen.TabIndex = 12;
+            this.Label_Check_Sen.Text = "For Senator: ";
+            this.Label_Check_Sen.ThemeAuthor = "Narwin";
+            this.Label_Check_Sen.ThemeName = "MetroLite";
+            // 
             // RegistrationClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -1704,6 +2380,7 @@
             this.TabControl_Vice.ResumeLayout(false);
             this.Panel_Vice_1.ResumeLayout(false);
             this.TabControl_Sen.ResumeLayout(false);
+            this.Panel_Sen.ResumeLayout(false);
             this.TabControl_Check.ResumeLayout(false);
             this.Panel_Submit.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1786,7 +2463,34 @@
         private MetroSet_UI.Controls.MetroSetLabel Label_Check_Gender;
         private MetroSet_UI.Controls.MetroSetLabel Label_Check_BirthDate;
         private MetroSet_UI.Controls.MetroSetLabel Label_Sen;
-        private System.Windows.Forms.Panel Panel_Sen;
+        private MetroSet_UI.Controls.MetroSetLabel Label_Check_City;
+        private MetroSet_UI.Controls.MetroSetLabel Label_Check_Region;
+        private MetroSet_UI.Controls.MetroSetLabel Label_Check_Contact;
+        private MetroSet_UI.Controls.MetroSetLabel Label_Check_Voter_ID;
+        private MetroSet_UI.Controls.MetroSetPanel Panel_Sen;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_22;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_21;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_20;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_19;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_18;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_17;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_16;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_15;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_14;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_13;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_12;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_11;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_10;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_9;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_8;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_7;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_6;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_5;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_4;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_3;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_2;
+        private MetroSet_UI.Controls.MetroSetCheckBox Radio_Sen_1;
+        private MetroSet_UI.Controls.MetroSetLabel Label_Check_Sen;
     }
 }
 

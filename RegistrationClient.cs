@@ -32,9 +32,12 @@ namespace RegistrationClient
         bool Text_Voter_Contact_HasValue = false;
         bool Radio_Pres_HasValue = false;
         bool Radio_Vice_HasValue = false;
+        bool Radio_Sen_HasValue = false;
         bool TabControl_Main_IsSubmit = false;
         bool Button_Reset_EnableCondition = false;
         bool Button_Submit_EnableCondition = false;
+        bool[] Radio_Sen_Check = new bool[22];
+        int Radio_Sen_Counter = 0;
         Regions regions = new Regions();
         public RegistrationClient()
         {
@@ -55,23 +58,22 @@ namespace RegistrationClient
             Button_Submit.Enabled = false;
             Button_UpdateState();
         }
-        private void ScrollBar_ValueChanged(object sender, EventArgs e)
+        private void Check_SenValue()
         {
-            Panel_Sen = this.Controls.OfType<Panel>().FirstOrDefault();
-            if (Panel_Sen != null)
-            {
-                Panel_Sen.Top = -((VScrollBar)sender).Value;
-            }
+            Radio_Sen_Check = new bool[22] { Radio_Sen_1.Checked, Radio_Sen_2.Checked, Radio_Sen_3.Checked, Radio_Sen_4.Checked, Radio_Sen_5.Checked, Radio_Sen_6.Checked, Radio_Sen_7.Checked, Radio_Sen_8.Checked, Radio_Sen_9.Checked, Radio_Sen_10.Checked, Radio_Sen_11.Checked, Radio_Sen_12.Checked, Radio_Sen_13.Checked, Radio_Sen_14.Checked, Radio_Sen_15.Checked, Radio_Sen_16.Checked, Radio_Sen_17.Checked, Radio_Sen_18.Checked, Radio_Sen_19.Checked, Radio_Sen_20.Checked, Radio_Sen_21.Checked, Radio_Sen_22.Checked };
+            Radio_Sen_Counter = Radio_Sen_Check.Count(c => c);
         }
         private void Check_HasValue()
         {
             Radio_Pres_HasValue = (Radio_Pres_1.Checked || Radio_Pres_2.Checked || Radio_Pres_3.Checked || Radio_Pres_4.Checked || Radio_Pres_5.Checked || Radio_Pres_6.Checked || Radio_Pres_7.Checked || Radio_Pres_8.Checked || Radio_Pres_9.Checked || Radio_Pres_10.Checked);
             Radio_Vice_HasValue = (Radio_Vice_1.Checked || Radio_Vice_2.Checked || Radio_Vice_3.Checked || Radio_Vice_4.Checked || Radio_Vice_5.Checked || Radio_Vice_6.Checked || Radio_Vice_7.Checked || Radio_Vice_8.Checked || Radio_Vice_9.Checked);
-            Button_Reset_EnableCondition = (Radio_Pres_HasValue || Radio_Vice_HasValue || Text_Name_First_HasValue || Text_Name_Middle_HasValue || Text_Name_Last_HasValue || Radio_Male_HasValue || Radio_Female_HasValue || Combo_Birth_Month_HasValue || Combo_Birth_Year_HasValue || Combo_Birth_Day_HasValue || Combo_Voter_Region_HasValue || Combo_Voter_City_HasValue || Text_Voter_ID_HasValue || Text_Voter_Contact_HasValue);
-            Button_Submit_EnableCondition = (TabControl_Main_IsSubmit && Radio_Pres_HasValue && Radio_Vice_HasValue && Text_Name_First_HasValue && Text_Name_Middle_HasValue && Text_Name_Last_HasValue && (Radio_Male_HasValue || Radio_Female_HasValue) && Combo_Birth_Month_HasValue && Combo_Birth_Year_HasValue && Combo_Birth_Day_HasValue && Combo_Voter_Region_HasValue && Combo_Voter_City_HasValue && Text_Voter_ID_HasValue && Text_Voter_Contact_HasValue);
+            Radio_Sen_HasValue = (Radio_Sen_1.Checked || Radio_Sen_2.Checked || Radio_Sen_3.Checked || Radio_Sen_4.Checked || Radio_Sen_5.Checked || Radio_Sen_6.Checked || Radio_Sen_7.Checked || Radio_Sen_8.Checked || Radio_Sen_9.Checked || Radio_Sen_10.Checked || Radio_Sen_11.Checked || Radio_Sen_12.Checked || Radio_Sen_13.Checked || Radio_Sen_14.Checked || Radio_Sen_15.Checked || Radio_Sen_16.Checked || Radio_Sen_17.Checked || Radio_Sen_18.Checked || Radio_Sen_19.Checked || Radio_Sen_20.Checked || Radio_Sen_21.Checked || Radio_Sen_22.Checked);
+            Button_Reset_EnableCondition = (Radio_Pres_HasValue || Radio_Vice_HasValue || Radio_Sen_HasValue || Text_Name_First_HasValue || Text_Name_Middle_HasValue || Text_Name_Last_HasValue || Radio_Male_HasValue || Radio_Female_HasValue || Combo_Birth_Month_HasValue || Combo_Birth_Year_HasValue || Combo_Birth_Day_HasValue || Combo_Voter_Region_HasValue || Combo_Voter_City_HasValue || Text_Voter_ID_HasValue || Text_Voter_Contact_HasValue);
+            Button_Submit_EnableCondition = (TabControl_Main_IsSubmit && (Radio_Pres_HasValue || Radio_Vice_HasValue || (( Radio_Sen_Counter > 0 ) && (Radio_Sen_Counter < 13))) && Text_Name_First_HasValue && Text_Name_Middle_HasValue && Text_Name_Last_HasValue && (Radio_Male_HasValue || Radio_Female_HasValue) && Combo_Birth_Month_HasValue && Combo_Birth_Year_HasValue && Combo_Birth_Day_HasValue && Combo_Voter_Region_HasValue && Combo_Voter_City_HasValue && Text_Voter_ID_HasValue && Text_Voter_Contact_HasValue);
         }
         private void Button_UpdateState()
         {
+            Check_SenValue();
             Check_HasValue();
             Button_Reset.Enabled = Button_Reset_EnableCondition;
             Button_Submit.Enabled = Button_Submit_EnableCondition;
@@ -116,30 +118,19 @@ namespace RegistrationClient
             Text_Voter_ID_HasValue = false;
             Text_Voter_Contact.ResetText();
             Text_Voter_Contact_HasValue = false;
-            Radio_Pres_1.Checked = false;
-            Radio_Pres_2.Checked = false;
-            Radio_Pres_3.Checked = false;
-            Radio_Pres_4.Checked = false;
-            Radio_Pres_5.Checked = false;
-            Radio_Pres_6.Checked = false;
-            Radio_Pres_7.Checked = false;
-            Radio_Pres_8.Checked = false;
-            Radio_Pres_9.Checked = false;
-            Radio_Pres_10.Checked = false;
-            Radio_Vice_1.Checked = false;
-            Radio_Vice_2.Checked = false;
-            Radio_Vice_3.Checked = false;
-            Radio_Vice_4.Checked = false;
-            Radio_Vice_5.Checked = false;
-            Radio_Vice_6.Checked = false;
-            Radio_Vice_7.Checked = false;
-            Radio_Vice_8.Checked = false;
-            Radio_Vice_9.Checked = false;
+            Radio_Pres_1.Checked = false; Radio_Pres_2.Checked = false; Radio_Pres_3.Checked = false; Radio_Pres_4.Checked = false; Radio_Pres_5.Checked = false; Radio_Pres_6.Checked = false; Radio_Pres_7.Checked = false; Radio_Pres_8.Checked = false; Radio_Pres_9.Checked = false; Radio_Pres_10.Checked = false;
+            Radio_Vice_1.Checked = false; Radio_Vice_2.Checked = false; Radio_Vice_3.Checked = false; Radio_Vice_4.Checked = false; Radio_Vice_5.Checked = false; Radio_Vice_6.Checked = false; Radio_Vice_7.Checked = false; Radio_Vice_8.Checked = false; Radio_Vice_9.Checked = false;
+            Radio_Sen_1.Checked = false; Radio_Sen_2.Checked = false; Radio_Sen_3.Checked = false; Radio_Sen_4.Checked = false; Radio_Sen_5.Checked = false; Radio_Sen_6.Checked = false; Radio_Sen_7.Checked = false; Radio_Sen_8.Checked = false; Radio_Sen_9.Checked = false; Radio_Sen_10.Checked = false; Radio_Sen_11.Checked = false; Radio_Sen_12.Checked = false; Radio_Sen_13.Checked = false; Radio_Sen_14.Checked = false; Radio_Sen_15.Checked = false; Radio_Sen_16.Checked = false; Radio_Sen_17.Checked = false; Radio_Sen_18.Checked = false; Radio_Sen_19.Checked = false; Radio_Sen_20.Checked = false; Radio_Sen_21.Checked = false; Radio_Sen_22.Checked = false;
             Label_Check_Name.Text = "Name:";
-            Label_Check_Pres.Text = "For President: ";
-            Label_Check_Vice.Text = "For Vice President: ";
             Label_Check_BirthDate.Text = "Birth Date: ";
             Label_Check_Gender.Text = "Gender: ";
+            Label_Check_Region.Text = "Region: ";
+            Label_Check_City.Text = "City: ";
+            Label_Check_Voter_ID.Text = "Voter ID: ";
+            Label_Check_Contact.Text = "Contact ";
+            Label_Check_Pres.Text = "For President: ";
+            Label_Check_Vice.Text = "For Vice President: ";
+            Label_Check_Sen.Text = "For Senator: ";
             Button_UpdateState();
         }
         private void Text_Name_First_TextChanged(object sender, EventArgs e)
@@ -225,6 +216,8 @@ namespace RegistrationClient
         }
         private void TabControl_Main_SelectedIndexChanged(object sender, EventArgs e)
         {
+            TabControl_Main_IsSubmit = (TabControl_Main.SelectedIndex == 4) ? true : false;
+            Button_UpdateState();
             Label_Check_Name.Text = "Name: " + Text_Name_First.Text + " " + Text_Name_Middle.Text + " " + Text_Name_Last.Text;
             if(Radio_Pres_1.Checked == true)
             {
@@ -323,42 +316,15 @@ namespace RegistrationClient
             {
                 Label_Check_Gender.Text = "Gender: ";
             }
-            TabControl_Main_IsSubmit = (TabControl_Main.SelectedIndex == 4) ? true : false;
-            /*
-            if (TabControl_Main.SelectedIndex == 3)
+            Label_Check_Sen.Text = "For Senator: " + (Radio_Sen_Check[0] == true ? Radio_Sen_1.Text  + ", " : "") + (Radio_Sen_Check[1] == true ? Radio_Sen_2.Text  + ", " : "") + (Radio_Sen_Check[2] == true ? Radio_Sen_3.Text  + ", " : "") + (Radio_Sen_Check[3] == true ? Radio_Sen_4.Text  + ", " : "") + (Radio_Sen_Check[4] == true ? Radio_Sen_5.Text  + ", " : "") + (Radio_Sen_Check[5] == true ? Radio_Sen_6.Text  + ", " : "") + (Radio_Sen_Check[6] == true ? Radio_Sen_7.Text  + ", " : "") + (Radio_Sen_Check[7] == true ? Radio_Sen_8.Text  + ", " : "") + (Radio_Sen_Check[8] == true ? Radio_Sen_9.Text  + ", " : "") + (Radio_Sen_Check[9] == true ? Radio_Sen_10.Text  + ", " : "") + (Radio_Sen_Check[10] == true ? Radio_Sen_11.Text  + ", " : "") + (Radio_Sen_Check[11] == true ? Radio_Sen_12.Text  + ", " : "") + (Radio_Sen_Check[12] == true ? Radio_Sen_13.Text  + ", " : "") + (Radio_Sen_Check[13] == true ? Radio_Sen_14.Text  + ", " : "") + (Radio_Sen_Check[14] == true ? Radio_Sen_15.Text  + ", " : "") + (Radio_Sen_Check[15] == true ? Radio_Sen_16.Text  + ", " : "") + (Radio_Sen_Check[16] == true ? Radio_Sen_17.Text  + ", " : "") + (Radio_Sen_Check[17] == true ? Radio_Sen_18.Text  + ", " : "") + (Radio_Sen_Check[18] == true ? Radio_Sen_19.Text  + ", " : "") + (Radio_Sen_Check[19] == true ? Radio_Sen_20.Text  + ", " : "") + (Radio_Sen_Check[20] == true ? Radio_Sen_21.Text  + ", " : "") + (Radio_Sen_Check[21] == true ? Radio_Sen_22.Text  + ", " : "");
+            Label_Check_Region.Text = "Region: " + Combo_Voter_Region.Text;
+            Label_Check_City.Text = "City: " + Combo_Voter_City.Text;
+            Label_Check_Voter_ID.Text = "Voter ID: " + Text_Voter_ID.Text;
+            Label_Check_Contact.Text = "Contact: " + Text_Voter_Contact.Text;
+            if(Radio_Sen_Counter > 12 && TabControl_Main.SelectedIndex == 4)
             {
-                Panel_Sen.AutoScroll = true;
-                int Panel_Sen_Height_Counter = 0;
-                for (int Panel_Sen_Counter = 0; Panel_Sen_Counter < 64; Panel_Sen_Counter++)
-                {
-                    CheckBox Panel_Sen_Check = new CheckBox();
-                    Panel_Sen_Check.Location = new Point(15, 15 + Panel_Sen_Counter * 20);
-                    Panel_Sen_Check.Text = "CheckBox " + Panel_Sen_Counter;
-                    Panel_Sen.Controls.Add(Panel_Sen_Check);
-                    Panel_Sen_Height_Counter += Panel_Sen_Check.Height;
-                }
-                Panel_Sen.Height = Panel_Sen_Height_Counter;
-                VScrollBar scrollbar = new VScrollBar();
-                scrollbar.Minimum = 0;
-                scrollbar.Maximum = Panel_Sen.Height - Panel_Sen.ClientSize.Height;
-                scrollbar.LargeChange = Panel_Sen.ClientSize.Height;
-                scrollbar.Location = new Point(Panel_Sen.Right, Panel_Sen.Top);
-                scrollbar.Width = SystemInformation.VerticalScrollBarWidth;
-                scrollbar.Height = Panel_Sen.Height;
-                scrollbar.ValueChanged += new EventHandler(ScrollBar_ValueChanged);
-                Panel_Sen.Controls.Add(scrollbar);
-                Panel_Sen.Resize += (s, args) =>
-                {
-                    scrollbar.Maximum = Panel_Sen.Height - Panel_Sen.ClientSize.Height;
-                    scrollbar.LargeChange = Panel_Sen.ClientSize.Height;
-                };
+                MessageBox.Show("A voter is only allowed to vote up to 12 senatorial candidates. Please select only 12 candidates from the Senator tab.", "Maximum Senator Vote Reached");
             }
-            else
-            {
-
-            }
-            */
-            Button_UpdateState();
         }
         private void Radio_Pres_1_CheckedChanged(object sender)
         {
@@ -435,6 +401,116 @@ namespace RegistrationClient
         private void Radio_Vice_9_CheckedChanged(object sender)
         {
             Button_UpdateState(); 
+        }
+
+        private void Radio_Sen_1_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_2_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_3_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_4_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_5_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_6_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_7_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_8_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_9_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_10_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_11_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_12_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_13_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_14_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_15_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_16_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_17_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_18_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_19_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_20_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_21_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
+        }
+
+        private void Radio_Sen_22_CheckedChanged(object sender)
+        {
+            Button_UpdateState();
         }
     }
 }
